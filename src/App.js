@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    dummyListPosts: [
+      {
+        id: 1,
+        like: 0,
+        comments: [
+          { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
+          { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
+        ],
+        post: "POST1",
+      },
+      {
+        id: 2,
+        like: 1,
+        comments: [
+          { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
+          { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
+        ],
+        post: "POST2",
+      },
+      {
+        id: 3,
+        like: 0,
+        comments: [
+          { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
+          { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
+        ],
+        post: "POST3",
+      },
+    ],
+  };
+
+  render() {
+    return <div className="App"></div>;
+  }
 }
 
 export default App;
