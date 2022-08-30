@@ -3,7 +3,12 @@ import Post from "./post";
 
 class Posts extends Component {
   render() {
-    return <Post></Post>;
+    const { listOfPosts } = this.props;
+    return listOfPosts.map((specificPost) => (
+      <React.Fragment>
+        <Post onePost={specificPost} />
+      </React.Fragment>
+    ));
   }
 }
 

@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Posts></Posts>;
+        <Posts listOfPosts={this.state.dummyListPosts} />
       </React.Fragment>
     );
   }
