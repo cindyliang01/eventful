@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Posts from "./components/posts";
 
 class App extends Component {
   state = {
@@ -35,7 +36,11 @@ class App extends Component {
   };
 
   render() {
-    return <div className="App"></div>;
+    return (
+      <React.Fragment>
+        <Posts></Posts>;
+      </React.Fragment>
+    );
   }
 }
 
