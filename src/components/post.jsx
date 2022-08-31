@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CommentForm from "./commentForm";
+import EachComment from "./eachComment";
 
 class Post extends Component {
   render() {
@@ -18,6 +19,11 @@ class Post extends Component {
         >
           {this.likeUnlike()}
         </button>
+
+        <span>
+          Comments:{" "}
+          {<EachComment onePost={onePost} likeUnlike={this.likeUnlike} />}
+        </span>
       </div>
     );
   }
