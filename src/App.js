@@ -36,7 +36,7 @@ class App extends Component {
 
     dummyListTemplate: [
       {
-        id: 1,
+        id: 0,
         like: 0,
         comments: [{ id: 1, text: "", commentLikes: 0 }],
         post: " ",
@@ -76,6 +76,22 @@ class App extends Component {
     }
   };
 
+  createComment = (newComment, specificPost) => {
+    // cloning specific post instead of altering the actual state
+    const copyOfPosts = [...this.state.dummyListPosts];
+    const index = copyOfPosts.indexOf(specificPost);
+    copyOfPosts[index] = { ...specificPost };
+
+    const length = copyOfPosts[index].comments.length;
+    copyOfPosts[index].comments[length] = {
+      ...this.state.dummyListTemplate[0].comments[0],
+    };
+    // setting up new comment in specific post
+    copyOfPosts[index].comments[length].text = newComment;
+    copyOfPosts[index].comments[length].id = length + 1;
+    this.setState({ dummyListPosts: copyOfPosts });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -83,6 +99,7 @@ class App extends Component {
           listOfPosts={this.state.dummyListPosts}
           addLike={this.addLike}
           createPost={this.createPost}
+          createComment={this.createComment}
         />
       </React.Fragment>
     );

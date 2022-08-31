@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+import CommentForm from "./commentForm";
 
 class Post extends Component {
   render() {
-    const { onePost, addLike } = this.props;
+    const { onePost, addLike, createComment } = this.props;
     return (
       <div>
         <h4>Post :</h4>
         <p>{this.displayPosts()}</p>
+
+        <CommentForm createComment={createComment} onePost={onePost} />
+
         <span>Likes: {this.likeCounts()}</span>
         <button
           className="btn btn-secondary btn-sm m-2"

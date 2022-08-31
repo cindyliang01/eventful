@@ -4,7 +4,7 @@ import PostForm from "./postForm";
 
 class Posts extends Component {
   render() {
-    const { listOfPosts, addLike, createPost } = this.props;
+    const { listOfPosts, addLike, createPost, createComment } = this.props;
     return (
       <React.Fragment>
         <h1>Create post</h1>
@@ -17,6 +17,7 @@ class Posts extends Component {
                 onePost={specificPost}
                 key={specificPost.id}
                 addLike={addLike}
+                createComment={createComment}
               />
             </React.Fragment>
           ))}
