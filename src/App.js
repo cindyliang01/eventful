@@ -52,10 +52,18 @@ class App extends Component {
     }
   };
 
+  createPost = () => {
+    console.log("cr4eate post");
+  };
+
   render() {
     return (
       <React.Fragment>
-        <Posts listOfPosts={this.state.dummyListPosts} addLike={this.addLike} />
+        <Posts
+          listOfPosts={this.state.dummyListPosts}
+          addLike={this.addLike}
+          createPost={this.createPost}
+        />
       </React.Fragment>
     );
   }
