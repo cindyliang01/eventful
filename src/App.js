@@ -33,6 +33,30 @@ class App extends Component {
         post: "POST3",
       },
     ],
+
+    dummyListTemplate: [
+      {
+        id: 1,
+        like: 0,
+        comments: [{ id: 1, text: "", commentLikes: 0 }],
+        post: " ",
+      },
+    ],
+  };
+
+  createPost = (newPost) => {
+    const copyOfPosts = [...this.state.dummyListPosts];
+    const length = copyOfPosts.length;
+
+    let emptyPostTemplate = JSON.parse(
+      JSON.stringify(this.state.dummyListTemplate[0])
+    );
+
+    copyOfPosts[length] = emptyPostTemplate;
+    copyOfPosts[length].post = newPost;
+    copyOfPosts[length].id = length + 1;
+
+    this.setState({ dummyListPosts: copyOfPosts });
   };
 
   addLike = (specificPost) => {
@@ -50,10 +74,6 @@ class App extends Component {
       copyOfPosts[index].like--;
       this.setState({ dummyListPosts: copyOfPosts });
     }
-  };
-
-  createPost = () => {
-    console.log("cr4eate post");
   };
 
   render() {
