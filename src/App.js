@@ -35,10 +35,27 @@ class App extends Component {
     ],
   };
 
+  addLike = (specificPost) => {
+    // cloning specific post instead of altering the actual state
+    const copyOfPosts = [...this.state.dummyListPosts];
+    const index = copyOfPosts.indexOf(specificPost);
+    copyOfPosts[index] = { ...specificPost };
+
+    //only lets user like once --> Either shows like or unlike
+
+    if (specificPost.like === 0) {
+      copyOfPosts[index].like++;
+      this.setState({ dummyListPosts: copyOfPosts });
+    } else {
+      copyOfPosts[index].like--;
+      this.setState({ dummyListPosts: copyOfPosts });
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
-        <Posts listOfPosts={this.state.dummyListPosts} />
+        <Posts listOfPosts={this.state.dummyListPosts} addLike={this.addLike} />
       </React.Fragment>
     );
   }
