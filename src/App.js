@@ -92,6 +92,20 @@ class App extends Component {
     this.setState({ dummyListPosts: copyOfPosts });
   };
 
+  addLikeForComment = (commentId, specificPost) => {
+    const copyOfPosts = [...this.state.dummyListPosts];
+    const index = copyOfPosts.indexOf(specificPost);
+    copyOfPosts[index] = { ...specificPost };
+
+    if (specificPost.comments[commentId - 1].commentLikes === 0) {
+      copyOfPosts[index].comments[commentId - 1].commentLikes++;
+      this.setState({ dummyListPosts: copyOfPosts });
+    } else {
+      copyOfPosts[index].comments[commentId - 1].commentLikes--;
+      this.setState({ dummyListPosts: copyOfPosts });
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -100,6 +114,7 @@ class App extends Component {
           addLike={this.addLike}
           createPost={this.createPost}
           createComment={this.createComment}
+          addLikeForComment={this.addLikeForComment}
         />
       </React.Fragment>
     );

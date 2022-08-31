@@ -4,7 +4,7 @@ import EachComment from "./eachComment";
 
 class Post extends Component {
   render() {
-    const { onePost, addLike, createComment } = this.props;
+    const { onePost, addLike, createComment, addLikeForComment } = this.props;
     return (
       <div>
         <h4>Post :</h4>
@@ -22,7 +22,12 @@ class Post extends Component {
 
         <span>
           Comments:{" "}
-          {<EachComment onePost={onePost} likeUnlike={this.likeUnlike} />}
+          {
+            <EachComment
+              onePost={onePost}
+              addLikeForComment={addLikeForComment}
+            />
+          }
         </span>
       </div>
     );
