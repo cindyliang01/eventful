@@ -106,6 +106,15 @@ class App extends Component {
     }
   };
 
+  deleteForComment = (commentId, specificPostId) => {
+    const copyOfPosts = [...this.state.dummyListPosts];
+    const deleteComments = this.state.dummyListPosts[
+      specificPostId - 1
+    ].comments.filter((c) => c.id !== commentId);
+    copyOfPosts[specificPostId - 1].comments = deleteComments;
+    this.setState({ copyOfPosts: deleteComments });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -115,6 +124,7 @@ class App extends Component {
           createPost={this.createPost}
           createComment={this.createComment}
           addLikeForComment={this.addLikeForComment}
+          deleteForComment={this.deleteForComment}
         />
       </React.Fragment>
     );

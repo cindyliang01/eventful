@@ -4,7 +4,13 @@ import EachComment from "./eachComment";
 
 class Post extends Component {
   render() {
-    const { onePost, addLike, createComment, addLikeForComment } = this.props;
+    const {
+      onePost,
+      addLike,
+      createComment,
+      addLikeForComment,
+      deleteForComment,
+    } = this.props;
     return (
       <div>
         <h4>Post :</h4>
@@ -26,6 +32,7 @@ class Post extends Component {
             <EachComment
               onePost={onePost}
               addLikeForComment={addLikeForComment}
+              deleteForComment={deleteForComment}
             />
           }
         </span>

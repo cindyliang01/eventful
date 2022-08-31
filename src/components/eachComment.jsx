@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class EachComment extends Component {
   render() {
     const { comments } = this.props.onePost;
-    const { onePost, addLikeForComment } = this.props;
+    const { onePost, addLikeForComment, deleteForComment } = this.props;
     return (
       <div>
         {comments.map((eachComment) => (
@@ -16,7 +16,11 @@ class EachComment extends Component {
             >
               {eachComment.commentLikes === 0 ? "Like" : "Unlike"}
             </button>
-            <button>Delete</button>
+            <button
+              onClick={() => deleteForComment(eachComment.id, onePost.id)}
+            >
+              Delete
+            </button>
           </React.Fragment>
         ))}
       </div>

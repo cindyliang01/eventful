@@ -9,8 +9,8 @@ class Posts extends Component {
       addLike,
       createPost,
       createComment,
-
       addLikeForComment,
+      deleteForComment,
     } = this.props;
     return (
       <React.Fragment>
@@ -26,6 +26,7 @@ class Posts extends Component {
                 addLike={addLike}
                 createComment={createComment}
                 addLikeForComment={addLikeForComment}
+                deleteForComment={deleteForComment}
               />
             </React.Fragment>
           ))}
