@@ -57,6 +57,7 @@ class App extends Component {
     copyOfPosts[length].id = length + 1;
 
     this.setState({ dummyListPosts: copyOfPosts });
+    console.log(copyOfPosts);
   };
 
   addLike = (specificPost) => {
@@ -81,8 +82,16 @@ class App extends Component {
     const copyOfPosts = [...this.state.dummyListPosts];
     const index = copyOfPosts.indexOf(specificPost);
     copyOfPosts[index] = { ...specificPost };
+    console.log(copyOfPosts);
 
-    const length = copyOfPosts[index].comments.length;
+    let dummyVariable = 0;
+
+    if (copyOfPosts[index].comments[0].text !== "") {
+      dummyVariable = copyOfPosts[index].comments.length;
+    }
+
+    const length = dummyVariable;
+
     copyOfPosts[index].comments[length] = {
       ...this.state.dummyListTemplate[0].comments[0],
     };

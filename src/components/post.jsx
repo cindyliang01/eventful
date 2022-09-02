@@ -26,16 +26,20 @@ class Post extends Component {
           {this.likeUnlike()}
         </button>
 
-        <span>
-          Comments:{" "}
-          {
-            <EachComment
-              onePost={onePost}
-              addLikeForComment={addLikeForComment}
-              deleteForComment={deleteForComment}
-            />
-          }
-        </span>
+        {onePost.comments.length > 0 && onePost.comments[0].text !== "" ? (
+          <span>
+            Comments:{" "}
+            {
+              <EachComment
+                onePost={onePost}
+                addLikeForComment={addLikeForComment}
+                deleteForComment={deleteForComment}
+              />
+            }
+          </span>
+        ) : (
+          <span>No comments</span>
+        )}
       </div>
     );
   }
