@@ -82,11 +82,15 @@ class App extends Component {
     const copyOfPosts = [...this.state.dummyListPosts];
     const index = copyOfPosts.indexOf(specificPost);
     copyOfPosts[index] = { ...specificPost };
-    console.log(copyOfPosts);
 
     let dummyVariable = 0;
 
-    if (copyOfPosts[index].comments[0].text !== "") {
+    if (
+      copyOfPosts[index].comments.length !== 0 &&
+      copyOfPosts[index].comments[0].text === ""
+    ) {
+      dummyVariable = 0;
+    } else {
       dummyVariable = copyOfPosts[index].comments.length;
     }
 
@@ -122,6 +126,7 @@ class App extends Component {
     ].comments.filter((c) => c.id !== commentId);
     copyOfPosts[specificPostId - 1].comments = deleteComments;
     this.setState({ copyOfPosts: deleteComments });
+    console.log(copyOfPosts);
   };
 
   render() {
