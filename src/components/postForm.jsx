@@ -21,9 +21,14 @@ class PostForm extends Component {
       <div>
         <form
           onSubmit={(event) => {
-            event.preventDefault();
-            createPost(this.state.post);
-            this.setState({ post: "" });
+            if (this.state.post !== "") {
+              event.preventDefault();
+              createPost(this.state.post);
+              this.setState({ post: "" });
+            } else {
+              alert("You can't have an empty post");
+              event.preventDefault();
+            }
           }}
         >
           <textarea

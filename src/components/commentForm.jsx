@@ -19,9 +19,14 @@ class CommentForm extends Component {
       <div>
         <form
           onSubmit={(event) => {
-            event.preventDefault();
-            createComment(this.state.comment, onePost);
-            this.setState({ comment: "" });
+            if (this.state.comment !== "") {
+              event.preventDefault();
+              createComment(this.state.comment, onePost);
+              this.setState({ comment: "" });
+            } else {
+              alert("You can't have an empty comment");
+              event.preventDefault();
+            }
           }}
         >
           <textarea
