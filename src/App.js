@@ -5,33 +5,33 @@ import Posts from "./components/posts";
 class App extends Component {
   state = {
     dummyListPosts: [
-      {
-        id: 1,
-        like: 0,
-        comments: [
-          { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
-          { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
-        ],
-        post: "POST1",
-      },
-      {
-        id: 2,
-        like: 1,
-        comments: [
-          { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
-          { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
-        ],
-        post: "POST2",
-      },
-      {
-        id: 3,
-        like: 0,
-        comments: [
-          { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
-          { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
-        ],
-        post: "POST3",
-      },
+      // {
+      //   id: 1,
+      //   like: 0,
+      //   comments: [
+      //     { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
+      //     { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
+      //   ],
+      //   post: "POST1",
+      // },
+      // {
+      //   id: 2,
+      //   like: 1,
+      //   comments: [
+      //     { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
+      //     { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
+      //   ],
+      //   post: "POST2",
+      // },
+      // {
+      //   id: 3,
+      //   like: 0,
+      //   comments: [
+      //     { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
+      //     { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
+      //   ],
+      //   post: "POST3",
+      // },
     ],
 
     dummyListTemplate: [
@@ -103,6 +103,7 @@ class App extends Component {
     copyOfPosts[index].comments[length].text = newComment;
     copyOfPosts[index].comments[length].id = length + 1;
     this.setState({ dummyListPosts: copyOfPosts });
+    console.log(copyOfPosts);
   };
 
   addLikeForComment = (commentId, specificPost) => {
@@ -124,6 +125,13 @@ class App extends Component {
     const deleteComments = this.state.dummyListPosts[
       specificPostId - 1
     ].comments.filter((c) => c.id !== commentId);
+
+    let i = 1;
+    deleteComments.map((comment) => {
+      comment.id = i++;
+      return true;
+    });
+
     copyOfPosts[specificPostId - 1].comments = deleteComments;
     this.setState({ copyOfPosts: deleteComments });
     console.log(copyOfPosts);
