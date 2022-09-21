@@ -12,7 +12,7 @@ class App extends Component {
           { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
           { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
         ],
-        post: "POST1",
+        post: "Today is sunday and I think we are going to eat hotpot soon",
       },
       {
         id: 2,
@@ -21,7 +21,7 @@ class App extends Component {
           { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
           { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
         ],
-        post: "POST2",
+        post: "And Cindy's gonna be delicate in 10 years - Jackie",
       },
       {
         id: 3,
@@ -30,7 +30,7 @@ class App extends Component {
           { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
           { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
         ],
-        post: "POST3",
+        post: "I like to eat fish tofu and fish balls",
       },
     ],
 

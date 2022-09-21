@@ -19,7 +19,6 @@ class Post extends Component {
             {this.displayPosts()}
           </p>
 
-          <CommentForm createComment={createComment} onePost={onePost} />
           <div className=" flex flex-column border-2 border-gray-300 rounded">
             <div className=" flex flex-row">
               <span className="text-purple-500 m-3">
@@ -33,6 +32,9 @@ class Post extends Component {
                 {this.likeUnlike()}
               </button>
             </div>
+
+            <CommentForm createComment={createComment} onePost={onePost} />
+
             <div className="border-2 border-gray-200 m-2 p-2">
               {onePost.comments.length > 0 &&
               onePost.comments[0].text !== "" ? (
