@@ -29,15 +29,21 @@ class CommentForm extends Component {
             }
           }}
         >
-          <textarea
-            value={this.state.comment}
-            onChange={this.handleCommentsChange}
-            placeholder="Comment"
-          ></textarea>
+          <div className="flex flex-column p-3">
+            <textarea
+              value={this.state.comment}
+              onChange={this.handleCommentsChange}
+              placeholder="Comment"
+              className="border-2 rounded border-gray-300 p-1"
+            ></textarea>
 
-          <button className="btn btn-secondary btn-sm m-2" type="submit">
-            Comment
-          </button>
+            <button
+              className=" bg-pink-300 text-white rounded p-3 m-4 font-bold hover:bg-pink-200"
+              type="submit"
+            >
+              Comment
+            </button>
+          </div>
         </form>
       </div>
     );
