@@ -24,16 +24,16 @@ class Post extends Component {
 
           <div className=" flex flex-column border-2 border-gray-300 rounded">
             <div className=" flex flex-row">
-              <span className="text-purple-500 m-3">
+              {/* <span className="text-purple-500 m-3">
                 Likes: {this.likeCounts()}
-              </span>
+              </span> */}
               <div className="flex flex-grow"></div>
-              <button
+              {/* <button
                 className="bg-pink-300 text-white rounded p-1 font-bold m-3 hover:bg-pink-200"
                 onClick={() => addLike(onePost)}
               >
                 {this.likeUnlike()}
-              </button>
+              </button> */}
             </div>
 
             <CommentForm createComment={createComment} onePost={onePost} />

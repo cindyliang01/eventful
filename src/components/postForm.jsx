@@ -28,12 +28,15 @@ class PostForm extends Component {
       <div>
         <form
           onSubmit={(event) => {
-            if (this.state.post !== "") {
+            if (this.state.post !== "" && this.state.email) {
               event.preventDefault();
               createPost(this.state.post, this.state.email);
               this.setState({ post: "", email: "" });
+            } else if (this.state.email === "") {
+              alert("You can't have an empty Email!");
+              event.preventDefault();
             } else {
-              alert("You can't have an empty post");
+              alert("You can't have an empty Name!");
               event.preventDefault();
             }
           }}
