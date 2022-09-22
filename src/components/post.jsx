@@ -15,8 +15,11 @@ class Post extends Component {
       <div>
         <div>
           <h4 className="text-pink-500 text-center">Post :</h4>
+          <p className="text-1xl font-bold text-blue-400 px-2 ">
+            Name:{this.displayPosts()}
+          </p>
           <p className="text-1xl font-bold text-blue-400 border-b border-gray-600 p-2 ">
-            {this.displayPosts()}
+            Email: {this.displayEmail()}
           </p>
 
           <div className=" flex flex-column border-2 border-gray-300 rounded">
@@ -61,6 +64,11 @@ class Post extends Component {
   displayPosts() {
     const { post } = this.props.onePost;
     return post;
+  }
+
+  displayEmail() {
+    const { email } = this.props.onePost;
+    return email;
   }
 
   likeCounts() {

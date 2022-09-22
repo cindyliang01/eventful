@@ -6,12 +6,19 @@ class PostForm extends Component {
 
     this.state = {
       post: "",
+      email: "",
     };
   }
 
   handlePostsChange = (event) => {
     this.setState({
       post: event.target.value,
+    });
+  };
+
+  handleEmailChange = (event) => {
+    this.setState({
+      email: event.target.value,
     });
   };
 
@@ -23,8 +30,8 @@ class PostForm extends Component {
           onSubmit={(event) => {
             if (this.state.post !== "") {
               event.preventDefault();
-              createPost(this.state.post);
-              this.setState({ post: "" });
+              createPost(this.state.post, this.state.email);
+              this.setState({ post: "", email: "" });
             } else {
               alert("You can't have an empty post");
               event.preventDefault();
@@ -32,13 +39,22 @@ class PostForm extends Component {
           }}
           className="w-auto min-w-[25%] max-w-min mx-auto space-y-6 flex flex-col items-stretch"
         >
-          <textarea
+          <input
             type="text"
-            placeholder="Post"
+            placeholder="Name"
             value={this.state.post}
             onChange={this.handlePostsChange}
             className="border-2 rounded border-gray-300 p-1"
-          ></textarea>
+          ></input>
+
+          <input
+            type="text"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleEmailChange}
+            className="border-2 rounded border-gray-300 p-1"
+          ></input>
+
           <button
             className="bg-pink-300 text-white rounded p-1 font-bold hover:bg-pink-200"
             type="submit"

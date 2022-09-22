@@ -5,33 +5,33 @@ import Posts from "./components/posts";
 class App extends Component {
   state = {
     dummyListPosts: [
-      {
-        id: 1,
-        like: 0,
-        comments: [
-          { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
-          { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
-        ],
-        post: "Today is sunday and I think we are going to eat hotpot soon",
-      },
-      {
-        id: 2,
-        like: 1,
-        comments: [
-          { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
-          { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
-        ],
-        post: "And Cindy's gonna be delicate in 10 years - Jackie",
-      },
-      {
-        id: 3,
-        like: 0,
-        comments: [
-          { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
-          { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
-        ],
-        post: "I like to eat fish tofu and fish balls",
-      },
+      // {
+      //   id: 1,
+      //   like: 0,
+      //   comments: [
+      //     { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
+      //     { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
+      //   ],
+      //   post: "Today is sunday and I think we are going to eat hotpot soon",
+      // },
+      // {
+      //   id: 2,
+      //   like: 1,
+      //   comments: [
+      //     { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
+      //     { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
+      //   ],
+      //   post: "And Cindy's gonna be delicate in 10 years - Jackie",
+      // },
+      // {
+      //   id: 3,
+      //   like: 0,
+      //   comments: [
+      //     { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
+      //     { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
+      //   ],
+      //   post: "I like to eat fish tofu and fish balls",
+      // },
     ],
 
     dummyListTemplate: [
@@ -44,7 +44,7 @@ class App extends Component {
     ],
   };
 
-  createPost = (newPost) => {
+  createPost = (newPost, newEmail) => {
     const copyOfPosts = [...this.state.dummyListPosts];
     const length = copyOfPosts.length;
 
@@ -54,6 +54,7 @@ class App extends Component {
 
     copyOfPosts[length] = emptyPostTemplate;
     copyOfPosts[length].post = newPost;
+    copyOfPosts[length].email = newEmail;
     copyOfPosts[length].id = length + 1;
 
     this.setState({ dummyListPosts: copyOfPosts });
