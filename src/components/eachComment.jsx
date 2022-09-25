@@ -8,33 +8,42 @@ class EachComment extends Component {
       <div>
         {comments.map((eachComment) => (
           <React.Fragment>
-            <div className="border-2 border-gray-300 rounded m-2 p-2 ">
+            <div className="border-2 border-blue-300 rounded m-2 p-2 ">
               <div className="flex flex-row">
                 <div className="w-1/2 m-3">{eachComment.text}</div>
                 <div className="w-1/2 m-3">
                   <div className="flex flex-col">
-                    <div>CommentLikes: {eachComment.commentLikes}</div>
+                    <div>
+                      {eachComment.commentLikes === 0 ? "" : "Resolved!"}
+                    </div>
                     <div>
                       <div className="flex flex-row">
-                        <div className="w-1/2">
+                        <div>
                           <button
-                            className="btn btn-secondary btn-sm m-2"
+                            className={
+                              eachComment.commentLikes === 0
+                                ? "btn btn-secondary btn-sm m-2"
+                                : "text-white rounded p-2 bg-green-400 hover:bg-green-300"
+                            }
                             onClick={() =>
                               addLikeForComment(eachComment.id, onePost)
                             }
                           >
-                            {eachComment.commentLikes === 0 ? "Like" : "Unlike"}
+                            {eachComment.commentLikes === 0
+                              ? "Resolve"
+                              : "Resolved!"}
                           </button>
                         </div>
+                        <div className="flex flex-grow"></div>
 
-                        <div className="w-1/2">
+                        <div>
                           <button
-                            className="btn btn-danger btn-sm m-2"
+                            className="btn btn-danger btn-sm p-2"
                             onClick={() =>
                               deleteForComment(eachComment.id, onePost.id)
                             }
                           >
-                            Delete
+                            X
                           </button>
                         </div>
                       </div>

@@ -14,15 +14,15 @@ class Post extends Component {
     return (
       <div>
         <div>
-          <h4 className="text-pink-500 text-center">Post :</h4>
-          <p className="text-1xl font-bold text-blue-400 px-2 ">
-            Name:{this.displayPosts()}
+          {/* <h4 className="text-pink-500 text-center">Post :</h4> */}
+          <p className="text-1xl font-bold text-gray-400 px-2 ">
+            Name: {this.displayPosts()}
           </p>
-          <p className="text-1xl font-bold text-blue-400 border-b border-gray-600 p-2 ">
+          <p className="text-1xl font-bold text-gray-400 border-b border-gray-600 px-2 pb-2 ">
             Email: {this.displayEmail()}
           </p>
 
-          <div className=" flex flex-column border-2 border-gray-300 rounded">
+          <div className=" flex flex-column rounded">
             <div className=" flex flex-row">
               {/* <span className="text-purple-500 m-3">
                 Likes: {this.likeCounts()}
@@ -38,23 +38,22 @@ class Post extends Component {
 
             <CommentForm createComment={createComment} onePost={onePost} />
 
-            <div className="border-2 border-gray-200 m-2 p-2">
-              {onePost.comments.length > 0 &&
-              onePost.comments[0].text !== "" ? (
-                <span className="text-pink-700">
-                  Comments:{" "}
-                  {
-                    <EachComment
-                      onePost={onePost}
-                      addLikeForComment={addLikeForComment}
-                      deleteForComment={deleteForComment}
-                    />
-                  }
-                </span>
-              ) : (
-                <span>No comments</span>
-              )}
-            </div>
+            {/* <div className="border-2 border-pink-200 m-2 p-2"> */}
+            {onePost.comments.length > 0 && onePost.comments[0].text !== "" ? (
+              <div className="text-purple-700">
+                {" "}
+                {
+                  <EachComment
+                    onePost={onePost}
+                    addLikeForComment={addLikeForComment}
+                    deleteForComment={deleteForComment}
+                  />
+                }
+              </div>
+            ) : (
+              <span className="text-gray-400">No comments</span>
+            )}
+            {/* </div> */}
           </div>
         </div>
       </div>
