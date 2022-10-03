@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Children, Component } from "react";
 const NavBar = () => {
   return (
     // <nav>
@@ -19,17 +19,9 @@ const NavBar = () => {
           <span className="badge badge-pill badge-secondary"></span>
           <div className="flex flex-row">
             <ul>
-              <a href="/Form" className="m-3 border-b border-gray-400 ">
-                Form
-              </a>
-
-              <a href="/AllForms" className="m-3 border-b border-gray-400 ">
-                All Forms
-              </a>
-
-              <a href="/FlashCard" className="m-3 border-b border-gray-400 ">
-                FlashCard
-              </a>
+              <CustomLink href="/Form">Form</CustomLink>
+              <CustomLink href="/AllForms">AllForms</CustomLink>
+              <CustomLink href="/FlashCard">FlashCard</CustomLink>
             </ul>
 
             {/* <span>Welcome to eventful!</span>
@@ -42,5 +34,16 @@ const NavBar = () => {
     </nav>
   );
 };
+
+function CustomLink({ href, children, ...props }) {
+  const path = window.location.pathname;
+  return (
+    <li className={path === href ? "active" : ""}>
+      <a href={href} {...props} className="m-3 border-b border-gray-400 ">
+        {children}
+      </a>
+    </li>
+  );
+}
 
 export default NavBar;
