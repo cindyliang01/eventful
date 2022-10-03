@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Post from "./post";
 import PostForm from "./postForm";
+import NavBar from "./NavBar";
 
 class Posts extends Component {
   render() {
@@ -16,6 +17,7 @@ class Posts extends Component {
     const reversedPosts = listOfPosts.map((item) => item).reverse();
     return (
       <React.Fragment>
+        <NavBar></NavBar>
         <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
           Welcome!
         </h1>
