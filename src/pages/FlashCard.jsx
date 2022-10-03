@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 const FlashCard = () => {
-  return <div>hi</div>;
+  return <div>FlashCard</div>;
 };
 
 export default FlashCard;

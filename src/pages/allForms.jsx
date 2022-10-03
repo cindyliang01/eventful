@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-const allForm = () => {
-  return <div>hi</div>;
+const AllForms = () => {
+  return <div>All Forms</div>;
 };
 
-export default allForm;
+export default AllForms;

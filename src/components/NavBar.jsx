@@ -18,17 +18,19 @@ const NavBar = () => {
         <a className="navbar-brand" href="#">
           <span className="badge badge-pill badge-secondary"></span>
           <div className="flex flex-row">
-            <a href="/" className="m-3 border-b border-gray-400 ">
-              Form
-            </a>
+            <ul>
+              <a href="/Form" className="m-3 border-b border-gray-400 ">
+                Form
+              </a>
 
-            <a href="/pricing" className="m-3 border-b border-gray-400 ">
-              All Forms
-            </a>
+              <a href="/AllForms" className="m-3 border-b border-gray-400 ">
+                All Forms
+              </a>
 
-            <a href="/about" className="m-3 border-b border-gray-400 ">
-              FlashCard
-            </a>
+              <a href="/FlashCard" className="m-3 border-b border-gray-400 ">
+                FlashCard
+              </a>
+            </ul>
 
             {/* <span>Welcome to eventful!</span>
             <button className="m-3 border-b border-gray-400 ">Form</button>

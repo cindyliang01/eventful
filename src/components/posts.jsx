@@ -17,10 +17,6 @@ class Posts extends Component {
     const reversedPosts = listOfPosts.map((item) => item).reverse();
     return (
       <React.Fragment>
-        <NavBar></NavBar>
-        <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
-          Welcome!
-        </h1>
         <PostForm createPost={createPost} />
         <div className="w-auto min-w-[25%] max-w-min mt-20 mx-auto space-y-6 flex flex-col items-stretch">
           <ul>

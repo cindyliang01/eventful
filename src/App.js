@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 import Posts from "./components/posts";
+import NavBar from "./components/NavBar";
+import Form from "./pages/Form";
+import AllForms from "./pages/AllForms";
+import FlashCard from "./pages/FlashCard";
 
 class App extends Component {
   state = {
@@ -137,8 +141,25 @@ class App extends Component {
   };
 
   render() {
+    let component;
+    switch (window.location.pathname) {
+      case "/Form":
+        component = <Form />;
+        break;
+      case "/AllForms":
+        component = <AllForms />;
+        break;
+      case "/FlashCard":
+        component = <FlashCard />;
+    }
+
     return (
       <React.Fragment>
+        <NavBar></NavBar>
+        <div className="container">{component}</div>
+        <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
+          Welcome!
+        </h1>
         <Posts
           listOfPosts={this.state.dummyListPosts}
           addLike={this.addLike}
