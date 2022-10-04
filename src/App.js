@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Form from "./pages/Form";
 import AllForms from "./pages/AllForms";
 import FlashCard from "./pages/FlashCard";
+import { Route, Routes } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -141,22 +142,28 @@ class App extends Component {
   };
 
   render() {
-    let component;
-    switch (window.location.pathname) {
-      case "/Form":
-        component = <Form />;
-        break;
-      case "/AllForms":
-        component = <AllForms />;
-        break;
-      case "/FlashCard":
-        component = <FlashCard />;
-    }
+    // let component;
+    // switch (window.location.pathname) {
+    //   case "/Form":
+    //     component = <Form />;
+    //     break;
+    //   case "/AllForms":
+    //     component = <AllForms />;
+    //     break;
+    //   case "/FlashCard":
+    //     component = <FlashCard />;
+    // }
 
     return (
       <React.Fragment>
         <NavBar></NavBar>
-        <div className="container">{component}</div>
+        <div className="container">
+          <Routes>
+            <Route path="/Form" element={<Form />} />
+            <Route path="/AllForms" element={<AllForms />} />
+            <Route path="/FlashCard" element={<FlashCard />} />
+          </Routes>
+        </div>
         <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
           Welcome!
         </h1>

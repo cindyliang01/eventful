@@ -1,47 +1,32 @@
 import React, { Children, Component } from "react";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 const NavBar = () => {
   return (
-    // <nav>
-    // <a href="/">Site Name</a>
-    // <ul>
-    //   <li>
-    //     <a href="/pricing">Pricing</a>
-    //   </li>
-    //   <li>
-    //     <a href="/about">About</a>
-    //   </li>
-    // </ul>
-    // </nav>
-
     <nav className="navbar bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="#">
           <span className="badge badge-pill badge-secondary"></span>
           <div className="flex flex-row">
             <ul>
-              <CustomLink href="/Form">Form</CustomLink>
-              <CustomLink href="/AllForms">AllForms</CustomLink>
-              <CustomLink href="/FlashCard">FlashCard</CustomLink>
+              <CustomLink to="/Form">Form</CustomLink>
+              <CustomLink to="/AllForms">AllForms</CustomLink>
+              <CustomLink to="/FlashCard">FlashCard</CustomLink>
             </ul>
-
-            {/* <span>Welcome to eventful!</span>
-            <button className="m-3 border-b border-gray-400 ">Form</button>
-            <button className="m-3 border-b border-gray-400">All Forms</button>
-            <button className=" m-3 border-b border-gray-400">Flash</button> */}
           </div>
-        </a>
+        </Link>
       </div>
     </nav>
   );
 };
 
-function CustomLink({ href, children, ...props }) {
-  const path = window.location.pathname;
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to);
+  const isActive = useMatch({ path: resolvedPath.pathname });
   return (
-    <li className={path === href ? "active" : ""}>
-      <a href={href} {...props} className="m-3 border-b border-gray-400 ">
+    <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props} className="m-3 border-b border-gray-400 ">
         {children}
-      </a>
+      </Link>
     </li>
   );
 }
