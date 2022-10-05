@@ -142,28 +142,16 @@ class App extends Component {
   };
 
   render() {
-    // let component;
-    // switch (window.location.pathname) {
-    //   case "/Form":
-    //     component = <Form />;
-    //     break;
-    //   case "/AllForms":
-    //     component = <AllForms />;
-    //     break;
-    //   case "/FlashCard":
-    //     component = <FlashCard />;
-    // }
-
     return (
       <React.Fragment>
         <NavBar></NavBar>
-        <div className="container">
+        {/* <div className="container bg-red-300">
           <Routes>
             <Route path="/Form" element={<Form />} />
             <Route path="/AllForms" element={<AllForms />} />
             <Route path="/FlashCard" element={<FlashCard />} />
           </Routes>
-        </div>
+        </div> */}
         <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
           Welcome!
         </h1>
