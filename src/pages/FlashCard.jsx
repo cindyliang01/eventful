@@ -9,6 +9,7 @@ class FlashCard extends Component {
       addLikeForComment,
       deleteForComment,
       goPrevious,
+      goNext,
     } = this.props;
 
     return (
@@ -25,9 +26,26 @@ class FlashCard extends Component {
                 ></Post>
 
                 <button
-                  onClick={() => goPrevious(flashCardIndex, listOfPosts.length)}
+                  onClick={() => goPrevious(flashCardIndex)}
+                  className={
+                    "  text-white rounded p-3 m-4 font-bold  " +
+                    (flashCardIndex === 0
+                      ? "bg-gray-300 hover:bg-grey-200"
+                      : "bg-pink-300 hover:bg-pink-200")
+                  }
                 >
                   prev
+                </button>
+                <button
+                  onClick={() => goNext(flashCardIndex, listOfPosts.length)}
+                  className={
+                    "  text-white rounded p-3 m-4 font-bold  " +
+                    (flashCardIndex === listOfPosts.length - 1
+                      ? "bg-gray-300 hover:bg-grey-200"
+                      : "bg-pink-300 hover:bg-pink-200")
+                  }
+                >
+                  next
                 </button>
 
                 {/* <button

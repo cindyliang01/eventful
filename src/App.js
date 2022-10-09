@@ -159,6 +159,15 @@ class App extends Component {
     }
   };
 
+  goNext = (flashCardIndex, length) => {
+    if (flashCardIndex < length - 1) {
+      flashCardIndex++;
+      this.setState({ flashCardIndex }, () => {
+        console.log("flash index add" + this.state.flashCardIndex);
+      });
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -190,6 +199,7 @@ class App extends Component {
                   addLikeForComment={this.addLikeForComment}
                   deleteForComment={this.deleteForComment}
                   goPrevious={this.goPrevious}
+                  goNext={this.goNext}
                 />
               }
             />
