@@ -10,24 +10,25 @@ import { Route, Routes } from "react-router-dom";
 class App extends Component {
   state = {
     dummyListPosts: [
-      // {
-      //   id: 1,
-      //   like: 0,
-      //   comments: [
-      //     { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
-      //     { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
-      //   ],
-      //   post: "Today is sunday and I think we are going to eat hotpot soon",
-      // },
-      // {
-      //   id: 2,
-      //   like: 1,
-      //   comments: [
-      //     { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
-      //     { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
-      //   ],
-      //   post: "And Cindy's gonna be delicate in 10 years - Jackie",
-      // },
+      {
+        id: 1,
+        like: 0,
+        comments: [
+          { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
+          { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
+        ],
+        post: "Today is sunday and I think we are going to eat hotpot soon",
+        email: "sdfsdf@gmail.com",
+      },
+      {
+        id: 2,
+        like: 1,
+        comments: [
+          { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
+          { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
+        ],
+        post: "And Cindy's gonna be delicate in 10 years - Jackie",
+      },
       // {
       //   id: 3,
       //   like: 0,
@@ -48,7 +49,7 @@ class App extends Component {
       },
     ],
 
-    flashCard: 50,
+    flashCardIndex: 0,
   };
 
   createPost = (newPost, newEmail) => {
@@ -153,7 +154,12 @@ class App extends Component {
             <Route path="/AllForms" element={<AllForms />} />
             <Route
               path="/FlashCard"
-              element={<FlashCard flashCard={this.state.flashCard} />}
+              element={
+                <FlashCard
+                  flashCardIndex={this.state.flashCardIndex}
+                  listOfPosts={this.state.dummyListPosts}
+                />
+              }
             />
           </Routes>
         </div>
