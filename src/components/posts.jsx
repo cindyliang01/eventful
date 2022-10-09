@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Post from "./post";
 import PostForm from "./postForm";
-import NavBar from "./NavBar";
 
 class Posts extends Component {
   render() {
@@ -12,6 +11,7 @@ class Posts extends Component {
       createComment,
       addLikeForComment,
       deleteForComment,
+      flashCardState,
     } = this.props;
 
     const reversedPosts = listOfPosts.map((item) => item).reverse();
@@ -30,6 +30,7 @@ class Posts extends Component {
                     createComment={createComment}
                     addLikeForComment={addLikeForComment}
                     deleteForComment={deleteForComment}
+                    flashCardState={flashCardState}
                   />
                 </li>
               </React.Fragment>

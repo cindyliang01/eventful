@@ -50,6 +50,7 @@ class App extends Component {
     ],
 
     flashCardIndex: 0,
+    flashCardState: false,
   };
 
   createPost = (newPost, newEmail) => {
@@ -144,10 +145,17 @@ class App extends Component {
     this.setState({ copyOfPosts: deleteComments });
   };
 
+  setFlashCardState = (trueOrFalse) => {
+    this.setState({ flashCardState: trueOrFalse }, () => {
+      console.log("hiiehie" + this.state.flashCardState);
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
-        <NavBar></NavBar>
+        <span>{this.state.flashCardState}</span>
+        <NavBar setFlashCardState={this.setFlashCardState}></NavBar>
         <div className="container">
           <Routes>
             <Route path="/Form" element={<Form />} />
@@ -158,6 +166,8 @@ class App extends Component {
                 <FlashCard
                   flashCardIndex={this.state.flashCardIndex}
                   listOfPosts={this.state.dummyListPosts}
+                  addLikeForComment={this.addLikeForComment}
+                  deleteForComment={this.deleteForComment}
                 />
               }
             />
@@ -173,6 +183,7 @@ class App extends Component {
           createComment={this.createComment}
           addLikeForComment={this.addLikeForComment}
           deleteForComment={this.deleteForComment}
+          flashCardState={this.state.flashCardState}
         />
       </React.Fragment>
     );

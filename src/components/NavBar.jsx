@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 class NavBar extends Component {
   render() {
+    const { setFlashCardState } = this.props;
     return (
       <nav className="relative container px-6 pt-6 border-b">
         <div className="flex items-center justify-between">
@@ -10,18 +11,21 @@ class NavBar extends Component {
             <CustomLink
               to="/Form"
               className="hover:text-pink-400 text-gray-500"
+              onClick={() => setFlashCardState(false)}
             >
               Form
             </CustomLink>
             <CustomLink
               to="/AllForms"
               className="hover:text-pink-400 text-gray-500"
+              onClick={() => setFlashCardState(false)}
             >
               All Forms
             </CustomLink>
             <CustomLink
               to="/FlashCard"
               className="hover:text-pink-400 text-gray-500"
+              onClick={() => setFlashCardState(true)}
             >
               FlashCard
             </CustomLink>
@@ -33,6 +37,10 @@ class NavBar extends Component {
 }
 
 function CustomLink({ to, children, ...props }) {
+  // const { setFlashBackState } = this.props;
+  // if (to === "/FlashCard") {
+  //   setFlashBackState();
+  // }
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname });
   return (
