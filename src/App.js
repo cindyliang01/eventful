@@ -47,6 +47,8 @@ class App extends Component {
         post: " ",
       },
     ],
+
+    flashCard: 50,
   };
 
   createPost = (newPost, newEmail) => {
@@ -145,13 +147,16 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar></NavBar>
-        {/* <div className="container bg-red-300">
+        <div className="container">
           <Routes>
             <Route path="/Form" element={<Form />} />
             <Route path="/AllForms" element={<AllForms />} />
-            <Route path="/FlashCard" element={<FlashCard />} />
+            <Route
+              path="/FlashCard"
+              element={<FlashCard flashCard={this.state.flashCard} />}
+            />
           </Routes>
-        </div> */}
+        </div>
         <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
           Welcome!
         </h1>
