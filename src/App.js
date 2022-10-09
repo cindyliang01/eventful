@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Posts from "./components/posts";
 import NavBar from "./components/NavBar";
 import Form from "./pages/Form";
 import AllForms from "./pages/AllForms";
@@ -29,15 +28,15 @@ class App extends Component {
         ],
         post: "And Cindy's gonna be delicate in 10 years - Jackie",
       },
-      // {
-      //   id: 3,
-      //   like: 0,
-      //   comments: [
-      //     { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
-      //     { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
-      //   ],
-      //   post: "I like to eat fish tofu and fish balls",
-      // },
+      {
+        id: 3,
+        like: 0,
+        comments: [
+          { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
+          { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
+        ],
+        post: "I like to eat fish tofu and fish balls",
+      },
     ],
 
     dummyListTemplate: [
@@ -49,7 +48,7 @@ class App extends Component {
       },
     ],
 
-    flashCardIndex: 0,
+    flashCardIndex: 1,
     flashCardState: false,
   };
 
@@ -151,6 +150,15 @@ class App extends Component {
     });
   };
 
+  goPrevious = (flashCardIndex) => {
+    if (flashCardIndex > 0) {
+      flashCardIndex--;
+      this.setState({ flashCardIndex }, () => {
+        console.log("flash index" + this.state.flashCardIndex);
+      });
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -158,7 +166,20 @@ class App extends Component {
         <NavBar setFlashCardState={this.setFlashCardState}></NavBar>
         <div className="container">
           <Routes>
-            <Route path="/Form" element={<Form />} />
+            <Route
+              path="/Form"
+              element={
+                <Form
+                  listOfPosts={this.state.dummyListPosts}
+                  addLike={this.addLike}
+                  createPost={this.createPost}
+                  createComment={this.createComment}
+                  addLikeForComment={this.addLikeForComment}
+                  deleteForComment={this.deleteForComment}
+                  flashCardState={this.state.flashCardState}
+                />
+              }
+            />
             <Route path="/AllForms" element={<AllForms />} />
             <Route
               path="/FlashCard"
@@ -168,15 +189,14 @@ class App extends Component {
                   listOfPosts={this.state.dummyListPosts}
                   addLikeForComment={this.addLikeForComment}
                   deleteForComment={this.deleteForComment}
+                  goPrevious={this.goPrevious}
                 />
               }
             />
           </Routes>
         </div>
-        <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
-          Welcome!
-        </h1>
-        <Posts
+
+        {/* <Posts
           listOfPosts={this.state.dummyListPosts}
           addLike={this.addLike}
           createPost={this.createPost}
@@ -184,7 +204,7 @@ class App extends Component {
           addLikeForComment={this.addLikeForComment}
           deleteForComment={this.deleteForComment}
           flashCardState={this.state.flashCardState}
-        />
+        /> */}
       </React.Fragment>
     );
   }

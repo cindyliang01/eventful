@@ -3,8 +3,13 @@ import Post from ".././components/post";
 
 class FlashCard extends Component {
   render() {
-    const { flashCardIndex, listOfPosts, addLikeForComment, deleteForComment } =
-      this.props;
+    const {
+      flashCardIndex,
+      listOfPosts,
+      addLikeForComment,
+      deleteForComment,
+      goPrevious,
+    } = this.props;
 
     return (
       <React.Fragment>
@@ -18,6 +23,25 @@ class FlashCard extends Component {
                   addLikeForComment={addLikeForComment}
                   deleteForComment={deleteForComment}
                 ></Post>
+
+                <button
+                  onClick={() => goPrevious(flashCardIndex, listOfPosts.length)}
+                >
+                  prev
+                </button>
+
+                {/* <button
+              onClick={() => goPrevious(flashCardIndex, notes.length)}
+              className={
+                "  text-white rounded p-3 m-4 font-bold  " +
+                (flashCardIndex === 0
+                  ? "bg-gray-300 hover:bg-grey-200"
+                  : "bg-pink-300 hover:bg-pink-200")
+              }
+              disabled={flashCardIndex == 0}
+            >
+              prev
+            </button> */}
               </React.Fragment>
             ) : (
               // "fjsdf"
