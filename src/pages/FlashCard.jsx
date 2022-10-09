@@ -33,6 +33,7 @@ class FlashCard extends Component {
                       ? "bg-gray-300 hover:bg-grey-200"
                       : "bg-pink-300 hover:bg-pink-200")
                   }
+                  disabled={flashCardIndex == 0}
                 >
                   prev
                 </button>
@@ -44,6 +45,7 @@ class FlashCard extends Component {
                       ? "bg-gray-300 hover:bg-grey-200"
                       : "bg-pink-300 hover:bg-pink-200")
                   }
+                  disabled={flashCardIndex == listOfPosts.length - 1}
                 >
                   next
                 </button>
