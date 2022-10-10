@@ -15,7 +15,6 @@ class Post extends Component {
     return (
       <div>
         <div>
-          {/* <h4 className="text-pink-500 text-center">Post :</h4> */}
           <p className="text-1xl font-bold text-gray-400 px-2 ">
             Name: {this.displayPosts()}
           </p>

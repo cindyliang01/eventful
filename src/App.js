@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Form from "./pages/Form";
@@ -50,6 +50,9 @@ class App extends Component {
 
     flashCardIndex: 1,
     flashCardState: false,
+
+    allFormsState: false,
+    formState: false,
   };
 
   createPost = (newPost, newEmail) => {
@@ -150,6 +153,18 @@ class App extends Component {
     });
   };
 
+  setAllFormsState = (trueOrFalse) => {
+    this.setState({ allFormsState: trueOrFalse }, () => {
+      console.log("hiiehie" + this.state.allFormsState);
+    });
+  };
+
+  setFormState = (trueOrFalse) => {
+    this.setState({ formState: trueOrFalse }, () => {
+      console.log("hiiehie" + this.state.formState);
+    });
+  };
+
   goPrevious = (flashCardIndex) => {
     if (flashCardIndex > 0) {
       flashCardIndex--;
@@ -172,7 +187,11 @@ class App extends Component {
     return (
       <React.Fragment>
         <span>{this.state.flashCardState}</span>
-        <NavBar setFlashCardState={this.setFlashCardState}></NavBar>
+        <NavBar
+          setFlashCardState={this.setFlashCardState}
+          setFormState={this.setFormState}
+          setAllFormsState={this.setAllFormsState}
+        ></NavBar>
         <div className="container">
           <Routes>
             <Route
@@ -189,7 +208,20 @@ class App extends Component {
                 />
               }
             />
-            <Route path="/AllForms" element={<AllForms />} />
+            <Route
+              path="/AllForms"
+              element={
+                <AllForms
+                  listOfPosts={this.state.dummyListPosts}
+                  addLike={this.addLike}
+                  createPost={this.createPost}
+                  createComment={this.createComment}
+                  addLikeForComment={this.addLikeForComment}
+                  deleteForComment={this.deleteForComment}
+                  flashCardState={this.state.flashCardState}
+                />
+              }
+            />
             <Route
               path="/FlashCard"
               element={

@@ -33,7 +33,7 @@ class FlashCard extends Component {
                       ? "bg-gray-300 hover:bg-grey-200"
                       : "bg-pink-300 hover:bg-pink-200")
                   }
-                  disabled={flashCardIndex == 0}
+                  disabled={flashCardIndex === 0}
                 >
                   prev
                 </button>
@@ -45,26 +45,12 @@ class FlashCard extends Component {
                       ? "bg-gray-300 hover:bg-grey-200"
                       : "bg-pink-300 hover:bg-pink-200")
                   }
-                  disabled={flashCardIndex == listOfPosts.length - 1}
+                  disabled={flashCardIndex === listOfPosts.length - 1}
                 >
                   next
                 </button>
-
-                {/* <button
-              onClick={() => goPrevious(flashCardIndex, notes.length)}
-              className={
-                "  text-white rounded p-3 m-4 font-bold  " +
-                (flashCardIndex === 0
-                  ? "bg-gray-300 hover:bg-grey-200"
-                  : "bg-pink-300 hover:bg-pink-200")
-              }
-              disabled={flashCardIndex == 0}
-            >
-              prev
-            </button> */}
               </React.Fragment>
             ) : (
-              // "fjsdf"
               "No posts"
             )}
           </ul>
@@ -73,11 +59,6 @@ class FlashCard extends Component {
       </React.Fragment>
     );
   }
-
-  // displayOneFlash() {
-  //   const { listOfPosts } = this.props;
-  //   onePost = listOfPosts;
-  // }
 }
 
 export default FlashCard;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Posts from ".././components/posts";
+import PostForm from "../components/postForm";
 
 class Form extends Component {
   render() {
@@ -17,10 +18,10 @@ class Form extends Component {
         <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
           Welcome!
         </h1>
+        <PostForm createPost={createPost}></PostForm>
         <Posts
           listOfPosts={listOfPosts}
           addLike={addLike}
-          createPost={createPost}
           createComment={createComment}
           addLikeForComment={addLikeForComment}
           deleteForComment={deleteForComment}
