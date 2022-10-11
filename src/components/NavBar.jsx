@@ -11,6 +11,7 @@ class NavBar extends Component {
             <CustomLink
               to="/Home"
               className="hover:text-pink-400 text-gray-500"
+              onClick={() => setPageState("home")}
             >
               Home
             </CustomLink>

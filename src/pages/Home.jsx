@@ -5,7 +5,7 @@ import PostForm from "../components/postForm";
 class Home extends Component {
   render() {
     return (
-      <div class="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4">
         <div>01</div>
         <div>02</div>
         <div>03</div>

@@ -6,7 +6,6 @@ class Post extends Component {
   render() {
     const {
       onePost,
-      addLike,
       createComment,
       addLikeForComment,
       deleteForComment,
@@ -24,16 +23,7 @@ class Post extends Component {
 
           <div className=" flex flex-column rounded">
             <div className=" flex flex-row">
-              {/* <span className="text-purple-500 m-3">
-                Likes: {this.likeCounts()}
-              </span> */}
               <div className="flex flex-grow"></div>
-              {/* <button
-                className="bg-pink-300 text-white rounded p-1 font-bold m-3 hover:bg-pink-200"
-                onClick={() => addLike(onePost)}
-              >
-                {this.likeUnlike()}
-              </button> */}
             </div>
 
             {pageState === "flashcard" ? (
@@ -44,8 +34,7 @@ class Post extends Component {
                 <CommentForm createComment={createComment} onePost={onePost} />
               </div>
             )}
-            {/* <CommentForm createComment={createComment} onePost={onePost} /> */}
-            {/* <div className="border-2 border-pink-200 m-2 p-2"> */}
+
             {onePost.comments.length > 0 && onePost.comments[0].text !== "" ? (
               <div className="text-purple-700">
                 {" "}
@@ -60,7 +49,6 @@ class Post extends Component {
             ) : (
               <span className="text-gray-400">No comments</span>
             )}
-            {/* </div> */}
           </div>
         </div>
       </div>
