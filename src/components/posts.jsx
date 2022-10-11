@@ -9,7 +9,7 @@ class Posts extends Component {
       createComment,
       addLikeForComment,
       deleteForComment,
-      flashCardState,
+      pageState,
     } = this.props;
 
     const reversedPosts = listOfPosts.map((item) => item).reverse();
@@ -28,7 +28,7 @@ class Posts extends Component {
                     createComment={createComment}
                     addLikeForComment={addLikeForComment}
                     deleteForComment={deleteForComment}
-                    flashCardState={flashCardState}
+                    pageState={pageState}
                   />
                 </li>
               </React.Fragment>

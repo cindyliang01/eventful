@@ -1,9 +1,11 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Form from "./pages/Form";
 import AllForms from "./pages/AllForms";
 import FlashCard from "./pages/FlashCard";
+import Home from "./pages/Home";
+
 import { Route, Routes } from "react-router-dom";
 
 class App extends Component {
@@ -49,10 +51,7 @@ class App extends Component {
     ],
 
     flashCardIndex: 1,
-    flashCardState: false,
-
-    allFormsState: false,
-    formState: false,
+    pageState: "none",
   };
 
   createPost = (newPost, newEmail) => {
@@ -147,21 +146,9 @@ class App extends Component {
     this.setState({ copyOfPosts: deleteComments });
   };
 
-  setFlashCardState = (trueOrFalse) => {
-    this.setState({ flashCardState: trueOrFalse }, () => {
-      console.log("hiiehie" + this.state.flashCardState);
-    });
-  };
-
-  setAllFormsState = (trueOrFalse) => {
-    this.setState({ allFormsState: trueOrFalse }, () => {
-      console.log("hiiehie" + this.state.allFormsState);
-    });
-  };
-
-  setFormState = (trueOrFalse) => {
-    this.setState({ formState: trueOrFalse }, () => {
-      console.log("hiiehie" + this.state.formState);
+  setPageState = (state) => {
+    this.setState({ pageState: state }, () => {
+      console.log("hiiehie" + this.state.pageState);
     });
   };
 
@@ -186,14 +173,10 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <span>{this.state.flashCardState}</span>
-        <NavBar
-          setFlashCardState={this.setFlashCardState}
-          setFormState={this.setFormState}
-          setAllFormsState={this.setAllFormsState}
-        ></NavBar>
+        <NavBar setPageState={this.setPageState}></NavBar>
         <div className="container">
           <Routes>
+            <Route path="/Home" element={<Home />}></Route>
             <Route
               path="/Form"
               element={
@@ -204,7 +187,7 @@ class App extends Component {
                   createComment={this.createComment}
                   addLikeForComment={this.addLikeForComment}
                   deleteForComment={this.deleteForComment}
-                  flashCardState={this.state.flashCardState}
+                  pageState={this.state.pageState}
                 />
               }
             />
@@ -218,7 +201,7 @@ class App extends Component {
                   createComment={this.createComment}
                   addLikeForComment={this.addLikeForComment}
                   deleteForComment={this.deleteForComment}
-                  flashCardState={this.state.flashCardState}
+                  pageState={this.state.pageState}
                 />
               }
             />
@@ -232,21 +215,12 @@ class App extends Component {
                   deleteForComment={this.deleteForComment}
                   goPrevious={this.goPrevious}
                   goNext={this.goNext}
+                  pageState={this.state.pageState}
                 />
               }
             />
           </Routes>
         </div>
-
-        {/* <Posts
-          listOfPosts={this.state.dummyListPosts}
-          addLike={this.addLike}
-          createPost={this.createPost}
-          createComment={this.createComment}
-          addLikeForComment={this.addLikeForComment}
-          deleteForComment={this.deleteForComment}
-          flashCardState={this.state.flashCardState}
-        /> */}
       </React.Fragment>
     );
   }

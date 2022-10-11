@@ -10,7 +10,7 @@ class AllForms extends Component {
       createComment,
       addLikeForComment,
       deleteForComment,
-      flashCardState,
+      pageState,
     } = this.props;
     return (
       <React.Fragment>
@@ -25,7 +25,7 @@ class AllForms extends Component {
             createComment={createComment}
             addLikeForComment={addLikeForComment}
             deleteForComment={deleteForComment}
-            flashCardState={flashCardState}
+            pageState={pageState}
           ></Posts>
         </div>
       </React.Fragment>

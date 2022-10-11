@@ -10,6 +10,7 @@ class FlashCard extends Component {
       deleteForComment,
       goPrevious,
       goNext,
+      pageState,
     } = this.props;
 
     return (
@@ -23,6 +24,7 @@ class FlashCard extends Component {
                   comments={listOfPosts[flashCardIndex].comments}
                   addLikeForComment={addLikeForComment}
                   deleteForComment={deleteForComment}
+                  pageState={pageState}
                 ></Post>
 
                 <button

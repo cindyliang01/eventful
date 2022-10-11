@@ -10,7 +10,7 @@ class Post extends Component {
       createComment,
       addLikeForComment,
       deleteForComment,
-      flashCardState,
+      pageState,
     } = this.props;
     return (
       <div>
@@ -36,16 +36,15 @@ class Post extends Component {
               </button> */}
             </div>
 
-            {flashCardState === false ? (
+            {pageState === "flashcard" ? (
+              <div></div>
+            ) : (
               <div>
+                {" "}
                 <CommentForm createComment={createComment} onePost={onePost} />
               </div>
-            ) : (
-              <div></div>
             )}
-
             {/* <CommentForm createComment={createComment} onePost={onePost} /> */}
-
             {/* <div className="border-2 border-pink-200 m-2 p-2"> */}
             {onePost.comments.length > 0 && onePost.comments[0].text !== "" ? (
               <div className="text-purple-700">
