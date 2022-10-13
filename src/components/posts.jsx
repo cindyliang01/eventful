@@ -24,7 +24,7 @@ class Posts extends Component {
         >
           {reversedPosts.map((specificPost) => (
             <React.Fragment>
-              <div className="border-2 rounded-lg border-pink-200 mb-4 p-2">
+              <div className="border-2 rounded-lg border-pink-200 mb-4 p-2 ">
                 <Post
                   onePost={specificPost}
                   key={specificPost.id}
