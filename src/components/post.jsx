@@ -14,14 +14,23 @@ class Post extends Component {
     return (
       <div>
         <div>
-          <p className="text-1xl font-bold text-gray-400 px-2 ">
-            Name: {this.displayPosts()}
-          </p>
-          <p className="text-1xl font-bold text-gray-400 border-b border-gray-600 px-2 pb-2 ">
-            Email: {this.displayEmail()}
-          </p>
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between px-2 py-1">
+              <div className=" text-1xl font-bold text-gray-300">NAME:</div>
+              <div className="text-1xl  text-gray-400 px-2">
+                {this.displayPosts()}
+              </div>
+            </div>
 
-          <div className=" flex flex-column rounded">
+            <div className="flex flex-row justify-between border-b border-gray-400 px-2 pb-2">
+              <div className=" text-1xl font-bold text-gray-300">EMAIL:</div>
+              <div className="text-1xl text-gray-400 px-2">
+                {this.displayEmail()}
+              </div>
+            </div>
+          </div>
+
+          <div className=" flex flex-column rounded pt-1">
             <div className=" flex flex-row">
               <div className="flex flex-grow"></div>
             </div>

@@ -37,12 +37,16 @@ class CommentForm extends Component {
               className="border-2 rounded border-gray-300 p-1"
             ></textarea>
 
-            <button
-              className=" bg-pink-300 text-white rounded p-3 m-4 font-bold hover:bg-pink-200"
-              type="submit"
-            >
-              Comment
-            </button>
+            <div className="flex flex-row">
+              <div className="flex flex-grow"></div>
+              <button
+                className=" hover:bg-pink-200 text-white bg-pink-300  font-semibold mt-3  py-2 px-4 border rounded"
+                type="submit"
+              >
+                Comment
+              </button>
+              <div className="flex flex-grow"></div>
+            </div>
           </div>
         </form>
       </div>

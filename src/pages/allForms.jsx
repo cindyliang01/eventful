@@ -15,7 +15,7 @@ class AllForms extends Component {
     return (
       <React.Fragment>
         <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
-          Posts
+          All Forms : {listOfPosts.length}
         </h1>
         <div>
           <Posts

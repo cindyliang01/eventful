@@ -44,10 +44,6 @@ class NavBar extends Component {
 }
 
 function CustomLink({ to, children, ...props }) {
-  // const { setFlashBackState } = this.props;
-  // if (to === "/FlashCard") {
-  //   setFlashBackState();
-  // }
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname });
   return (

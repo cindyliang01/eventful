@@ -18,7 +18,7 @@ class App extends Component {
           { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
           { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
         ],
-        post: "Today is sunday and I think we are going to eat hotpot soon",
+        post: "Sunday W",
         email: "sdfsdf@gmail.com",
       },
       {
@@ -28,7 +28,8 @@ class App extends Component {
           { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
           { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
         ],
-        post: "And Cindy's gonna be delicate in 10 years - Jackie",
+        post: "Jackie Jin",
+        email: "fisf@gmail.com",
       },
       {
         id: 3,
@@ -37,7 +38,8 @@ class App extends Component {
           { id: 1, text: "commentOneFromPostThree", commentLikes: 0 },
           { id: 2, text: "commentTwoFromPostThree", commentLikes: 0 },
         ],
-        post: "I like to eat fish tofu and fish balls",
+        post: "Cindy Liang",
+        email: "cindy@gmail.com",
       },
     ],
 

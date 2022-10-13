@@ -15,8 +15,8 @@ class Form extends Component {
     } = this.props;
     return (
       <React.Fragment>
-        <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
-          Welcome!
+        <h1 className="text-center font-bold text-2xl mt-4 text-pink-300 pb-2">
+          Fill out the form!
         </h1>
         <PostForm createPost={createPost}></PostForm>
         <Posts
