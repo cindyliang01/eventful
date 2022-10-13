@@ -18,13 +18,13 @@ class Posts extends Component {
         <div
           className={
             pageState === "allForms"
-              ? "grid grid-cols-3 gap-8 pt-4 "
-              : "w-auto min-w-[25%] max-w-min mt-12 mx-auto space-y-6 flex flex-col items-stretch"
+              ? "grid grid-cols-3 gap-8 pt-4"
+              : "w-auto min-w-[35%] max-w-min mt-12 mx-auto space-y-6 flex flex-col items-stretch"
           }
         >
           {reversedPosts.map((specificPost) => (
             <React.Fragment>
-              <div className="border-2 rounded-lg border-pink-200 mb-4 p-2 ">
+              <div className="border-2 rounded-lg border-pink-200 mb-4 p-2 max-h-96 overflow-auto">
                 <Post
                   onePost={specificPost}
                   key={specificPost.id}

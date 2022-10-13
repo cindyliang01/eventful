@@ -56,7 +56,7 @@ class Post extends Component {
                 }
               </div>
             ) : (
-              <span className="text-gray-400">No comments</span>
+              <span className="text-gray-400 p-2 text-center">No comments</span>
             )}
           </div>
         </div>

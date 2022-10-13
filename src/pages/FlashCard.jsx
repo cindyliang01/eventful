@@ -17,7 +17,7 @@ class FlashCard extends Component {
         <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
           Review Feedback!
         </h1>
-        <div className="w-auto min-w-[25%] max-w-min mt-8 mx-auto space-y-6 flex flex-col items-stretch border-2 rounded-lg border-pink-200 mb-4 p-2">
+        <div className="w-auto min-w-[35%] max-w-min mt-8 mx-auto space-y-6 flex flex-col items-stretch border-2 rounded-lg border-pink-200 mb-4 p-2">
           <ul>
             {listOfPosts.length > 0 ? (
               <React.Fragment>
