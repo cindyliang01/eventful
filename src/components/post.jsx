@@ -52,6 +52,7 @@ class Post extends Component {
                     onePost={onePost}
                     addLikeForComment={addLikeForComment}
                     deleteForComment={deleteForComment}
+                    pageState={pageState}
                   />
                 }
               </div>

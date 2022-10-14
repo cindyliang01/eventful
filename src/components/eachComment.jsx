@@ -3,12 +3,19 @@ import React, { Component } from "react";
 class EachComment extends Component {
   render() {
     const { comments } = this.props.onePost;
-    const { onePost, addLikeForComment, deleteForComment } = this.props;
+    const { onePost, addLikeForComment, deleteForComment, pageState } =
+      this.props;
     return (
       <div>
         {comments.map((eachComment) => (
           <React.Fragment>
-            <div className="border-t border-gray-300 m-6 pt-4 ">
+            <div
+              className={
+                pageState === "flashcard"
+                  ? "border-b border-gray-300 m-6 pb-4"
+                  : "border-t border-gray-300 m-6 pt-4"
+              }
+            >
               <div className="flex flex-col">
                 <div className="text-center">{eachComment.text}</div>
                 <div>
