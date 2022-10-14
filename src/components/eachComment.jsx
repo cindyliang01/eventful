@@ -33,14 +33,18 @@ class EachComment extends Component {
 
                     <div className="flex flex-grow"></div>
 
-                    <button
-                      className=" hover:bg-red-300 text-white bg-red-400  font-semibold mt-3  py-2 px-4 border rounded"
-                      onClick={() =>
-                        deleteForComment(eachComment.id, onePost.id)
-                      }
-                    >
-                      X
-                    </button>
+                    {pageState === "flashcard" ? (
+                      <div></div>
+                    ) : (
+                      <button
+                        className=" hover:bg-red-300 text-white bg-red-400  font-semibold mt-3  py-2 px-4 border rounded"
+                        onClick={() =>
+                          deleteForComment(eachComment.id, onePost.id)
+                        }
+                      >
+                        X
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

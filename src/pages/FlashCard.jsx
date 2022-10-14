@@ -62,7 +62,7 @@ class FlashCard extends Component {
                 </div>
               </React.Fragment>
             ) : (
-              "No posts"
+              "No comments to review"
             )}
           </ul>
         </div>
