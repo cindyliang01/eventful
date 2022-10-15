@@ -54,7 +54,7 @@ class App extends Component {
     ],
 
     flashCardIndex: 1,
-    pageState: "none",
+    pageState: "home",
   };
 
   createPost = (newPost, newEmail) => {
