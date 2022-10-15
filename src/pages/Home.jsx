@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import PostForm from "../components/postForm";
 
 class Home extends Component {
   render() {
+    const { createPost, pageState } = this.props;
     return (
       <div className="flex flex-row justify-between">
-        <div className=" container border-2 border-red-600">
-          <div className="m-3 border-2 border-blue-500 rounded-xl p-3">
+        <div className=" mt-4 container">
+          <div className=" m-3 border-2 border-blue-500 rounded-xl p-3">
             <h2 className="underline underline-offset-8 mb-3">Reminders</h2>
             <h5>November 4</h5>
             <p>
@@ -30,7 +32,14 @@ class Home extends Component {
             </p>
           </div>
         </div>
-        <div className="container border-2 border-blue-600">bye</div>
+        <div className=" border-r-2 border-pink-500 mt-4 mx-4"></div>
+        <div className=" mt-4 container">
+          <h1 className="text-center font-bold text-2xl mt-4 text-pink-300 pb-2">
+            Fill out the form!
+          </h1>
+
+          <PostForm createPost={createPost} pageState={pageState}></PostForm>
+        </div>
       </div>
     );
   }

@@ -23,7 +23,7 @@ class PostForm extends Component {
   };
 
   render() {
-    const { createPost } = this.props;
+    const { createPost, pageState } = this.props;
     return (
       <div>
         <form
@@ -40,7 +40,11 @@ class PostForm extends Component {
               event.preventDefault();
             }
           }}
-          className="w-auto min-w-[25%] max-w-min mx-auto space-y-6 flex flex-col items-stretch"
+          className={
+            pageState === "home"
+              ? "w-auto min-w-[60%] max-w-min mx-auto space-y-6 flex flex-col items-stretch"
+              : "w-auto min-w-[30%] max-w-min mx-auto space-y-6 flex flex-col items-stretch"
+          }
         >
           <input
             type="text"
