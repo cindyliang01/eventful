@@ -4,7 +4,7 @@ class NavBar extends Component {
   render() {
     const { setPageState } = this.props;
     return (
-      <nav className="relative container px-6 pt-6 border-b">
+      <nav className="px-6 pt-3 border-b bg-red-300 ">
         <div className="flex items-center justify-between">
           <h4 className="text-gray-500">Welcome to eventful!</h4>
           <div className="flex space-x-6">

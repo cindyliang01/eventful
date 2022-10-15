@@ -6,9 +6,24 @@ class Home extends Component {
     const { createPost, pageState } = this.props;
     return (
       <div className="flex flex-row justify-between">
-        <div className=" mt-4 container">
+        <div className=" mt-4 container flex flex-col">
+          <div className="m-3 border-2 border-blue-500 rounded-xl p-3">
+            <h2 className="underline underline-offset-8 mb-3">About Us</h2>
+            <p>
+              {" "}
+              Our event is hosted to help spread. Harry smiled weakly. Yes,
+              trying on the hat was a lot better than having to do a spell, but
+              he did wish they could have tried it on without everyone watching.
+              The hat seemed to be asking rather a lot; Harry didn’t feel brave
+              or quick-witted or any of it at the moment. If only the hat had
+              mentioned a house for people who felt a bit queasy, that would
+              have been the one for him.
+            </p>
+          </div>
           <div className=" m-3 border-2 border-blue-500 rounded-xl p-3">
-            <h2 className="underline underline-offset-8 mb-3">Reminders</h2>
+            <h2 className="underline underline-offset-8 mb-3">
+              Important Dates
+            </h2>
             <h5>November 4</h5>
             <p>
               Ling na's bday! Make sure to come! If you don't I wont't give you
@@ -37,8 +52,9 @@ class Home extends Component {
           <h1 className="text-center font-bold text-2xl mt-4 text-pink-300 pb-2">
             Fill out the form!
           </h1>
-
-          <PostForm createPost={createPost} pageState={pageState}></PostForm>
+          <div className="content justify-center">
+            <PostForm createPost={createPost} pageState={pageState}></PostForm>
+          </div>
         </div>
       </div>
     );
