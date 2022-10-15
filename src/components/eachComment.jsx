@@ -6,7 +6,7 @@ class EachComment extends Component {
     const { onePost, addLikeForComment, deleteForComment, pageState } =
       this.props;
     return (
-      <div>
+      <div className=" flex flex-col-reverse">
         {comments.map((eachComment) => (
           <React.Fragment>
             <div
