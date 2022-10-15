@@ -9,7 +9,7 @@ class NavBar extends Component {
           <h4 className="text-gray-500">Welcome to eventful!</h4>
           <div className="flex space-x-6">
             <CustomLink
-              to="/Home"
+              to="/"
               className="hover:text-pink-400 text-gray-500"
               onClick={() => setPageState("home")}
             >

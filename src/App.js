@@ -179,7 +179,7 @@ class App extends Component {
         <NavBar setPageState={this.setPageState}></NavBar>
         <div className="container">
           <Routes>
-            <Route path="/Home" element={<Home />}></Route>
+            <Route path="/" element={<Home />}></Route>
             <Route
               path="/Form"
               element={
