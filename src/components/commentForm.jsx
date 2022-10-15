@@ -40,7 +40,7 @@ class CommentForm extends Component {
             <div className="flex flex-row">
               <div className="flex flex-grow"></div>
               <button
-                className=" hover:bg-pink-200 text-white bg-pink-300  font-semibold mt-3  py-2 px-4 border rounded"
+                className=" hover:bg-transparent bg-blue-300 hover:text-blue-500 text-gray-100 font-semibold mt-3  py-2 px-4 border rounded"
                 type="submit"
               >
                 Comment

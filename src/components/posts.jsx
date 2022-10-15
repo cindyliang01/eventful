@@ -24,17 +24,15 @@ class Posts extends Component {
         >
           {reversedPosts.map((specificPost) => (
             <React.Fragment>
-              <div className="border-2 rounded-2xl border-grey-200 mb-4 p-2 max-h-96 overflow-auto bg-slate-200">
-                <Post
-                  onePost={specificPost}
-                  key={specificPost.id}
-                  addLike={addLike}
-                  createComment={createComment}
-                  addLikeForComment={addLikeForComment}
-                  deleteForComment={deleteForComment}
-                  pageState={pageState}
-                />
-              </div>
+              <Post
+                onePost={specificPost}
+                key={specificPost.id}
+                addLike={addLike}
+                createComment={createComment}
+                addLikeForComment={addLikeForComment}
+                deleteForComment={deleteForComment}
+                pageState={pageState}
+              />
             </React.Fragment>
           ))}
         </div>

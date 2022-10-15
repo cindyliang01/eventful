@@ -180,7 +180,7 @@ class App extends Component {
         <div className="container">
           <Routes>
             <Route
-              path="/"
+              path=""
               element={
                 <Home
                   createPost={this.createPost}
