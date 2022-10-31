@@ -53,6 +53,8 @@ class App extends Component {
       },
     ],
 
+    feedBackTemplate: [],
+
     flashCardIndex: 1,
     pageState: "home",
   };
@@ -71,6 +73,18 @@ class App extends Component {
     copyOfPosts[length].id = length + 1;
 
     this.setState({ dummyListPosts: copyOfPosts });
+  };
+
+  createFeedBack = (newFeedback) => {
+    const copyOfPosts = [...this.state.feedBackTemplate];
+    const length = copyOfPosts.length;
+    copyOfPosts[length] = { ...copyOfPosts[0] };
+    copyOfPosts[length].feedback = newFeedback;
+    copyOfPosts[length].id = length + 1;
+
+    console.log(copyOfPosts);
+
+    this.setState({ feedBackTemplate: copyOfPosts });
   };
 
   addLike = (specificPost) => {
@@ -227,6 +241,7 @@ class App extends Component {
                   goPrevious={this.goPrevious}
                   goNext={this.goNext}
                   pageState={this.state.pageState}
+                  createFeedBack={this.createFeedBack}
                 />
               }
             />

@@ -12,6 +12,7 @@ class FlashCard extends Component {
       goPrevious,
       goNext,
       pageState,
+      createFeedBack,
     } = this.props;
 
     const filteredPost = listOfPosts.filter((post) => post.comments.length > 0);
@@ -68,7 +69,7 @@ class FlashCard extends Component {
             next
           </button>
         </div>
-        <FeedBackForm></FeedBackForm>
+        <FeedBackForm createFeedBack={createFeedBack}></FeedBackForm>
       </React.Fragment>
     );
   }

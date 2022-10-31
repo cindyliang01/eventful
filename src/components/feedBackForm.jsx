@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // what to do next: create a new list in app where i can store my feedback comments. then, display it one
 // by one in the flashback area.
+//testing why it's yellow
 
 class FeedBackForm extends Component {
   constructor(props) {
@@ -17,9 +18,21 @@ class FeedBackForm extends Component {
   };
 
   render() {
+    const { createFeedBack } = this.props;
     return (
       <div>
-        <form>
+        <form
+          onSubmit={(event) => {
+            if (this.state.feedback !== "") {
+              event.preventDefault();
+              createFeedBack(this.state.feedback);
+              this.setState({ feedback: "" });
+            } else {
+              alert("You can't have an empty feedback");
+              event.preventDefault();
+            }
+          }}
+        >
           <div className="flex flex-column p-3">
             <textarea
               value={this.state.feedback}
