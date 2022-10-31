@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Post from ".././components/post";
+import FeedBackForm from "../components/feedBackForm";
 
 class FlashCard extends Component {
   render() {
@@ -67,6 +68,7 @@ class FlashCard extends Component {
             next
           </button>
         </div>
+        <FeedBackForm></FeedBackForm>
       </React.Fragment>
     );
   }
