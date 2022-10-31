@@ -14,7 +14,7 @@ class AllForms extends Component {
     } = this.props;
     return (
       <React.Fragment>
-        <h1 className="text-center font-bold text-2xl mt-4 text-pink-300">
+        <h1 className="text-center font-bold text-2xl mt-4 text-blue-300">
           All Forms : {listOfPosts.length}
         </h1>
         <div>

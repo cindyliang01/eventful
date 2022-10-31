@@ -23,12 +23,12 @@ class EachComment extends Component {
                     <button
                       className={
                         eachComment.commentLikes === 0
-                          ? " hover:bg-pink-200 text-white bg-pink-300  font-semibold mt-3  py-2 px-4 border rounded"
+                          ? " hover:bg-transparent bg-blue-300 hover:text-blue-500 text-gray-100 font-semibold mt-3  py-2 px-4 border rounded"
                           : " hover:bg-green-200 text-white bg-green-300  font-semibold mt-3  py-2 px-4 border rounded"
                       }
                       onClick={() => addLikeForComment(eachComment.id, onePost)}
                     >
-                      {eachComment.commentLikes === 0 ? "Resolve" : "Resolved!"}
+                      {eachComment.commentLikes === 0 ? " ✓" : " ✓"}
                     </button>
 
                     <div className="flex flex-grow"></div>

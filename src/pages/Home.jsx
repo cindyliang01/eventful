@@ -49,7 +49,7 @@ class Home extends Component {
         </div>
         <div className=" border-r-2 border-pink-500 mt-4 mx-4"></div>
         <div className=" mt-4 container">
-          <h1 className="text-center font-bold text-2xl mt-4 text-pink-300 pb-2">
+          <h1 className="text-center font-bold text-2xl mt-4 text-blue-300 pb-2">
             Fill out the form!
           </h1>
           <div className="content justify-center">

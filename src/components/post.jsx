@@ -44,7 +44,7 @@ class Post extends Component {
           )}
 
           {onePost.comments.length > 0 && onePost.comments[0].text !== "" ? (
-            <div className="text-purple-700">
+            <div className="text-gray-400">
               {" "}
               {
                 <EachComment

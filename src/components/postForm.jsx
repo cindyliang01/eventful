@@ -63,7 +63,7 @@ class PostForm extends Component {
           ></input>
 
           <button
-            className="bg-pink-300 text-white rounded p-1 font-bold hover:bg-pink-200"
+            className="hover:bg-transparent bg-blue-300 hover:text-blue-500 text-gray-100 font-semibold mt-3  py-2 px-4 border rounded"
             type="submit"
           >
             Submit
