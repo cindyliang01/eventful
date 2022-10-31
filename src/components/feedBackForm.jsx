@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+// what to do next: create a new list in app where i can store my feedback comments. then, display it one
+// by one in the flashback area.
+
 class FeedBackForm extends Component {
   constructor(props) {
     super(props);
