@@ -53,7 +53,11 @@ class App extends Component {
       },
     ],
 
-    feedBackTemplate: [],
+    feedBackTemplate: [
+      { id: 0, feedback: "12" },
+      { id: 1, feedback: "ff" },
+      { id: 2, feedback: "lmao" },
+    ],
 
     flashCardIndex: 1,
     pageState: "home",
@@ -82,7 +86,7 @@ class App extends Component {
     copyOfPosts[length].feedback = newFeedback;
     copyOfPosts[length].id = length + 1;
 
-    console.log(copyOfPosts);
+    console.log(this.state.feedBackTemplate);
 
     this.setState({ feedBackTemplate: copyOfPosts });
   };
@@ -242,6 +246,7 @@ class App extends Component {
                   goNext={this.goNext}
                   pageState={this.state.pageState}
                   createFeedBack={this.createFeedBack}
+                  listOfFeedBacks={this.state.feedBackTemplate}
                 />
               }
             />

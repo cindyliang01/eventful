@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Post from ".././components/post";
 import FeedBackForm from "../components/feedBackForm";
+import FeedBacks from "../components/feedbacks";
 
 class FlashCard extends Component {
   render() {
@@ -13,6 +14,7 @@ class FlashCard extends Component {
       goNext,
       pageState,
       createFeedBack,
+      listOfFeedBacks,
     } = this.props;
 
     const filteredPost = listOfPosts.filter((post) => post.comments.length > 0);
@@ -69,6 +71,15 @@ class FlashCard extends Component {
             next
           </button>
         </div>
+        <FeedBacks listOfFeedBacks={listOfFeedBacks}></FeedBacks>
+
+        {/* {listOfPosts.map((specificPost) => (
+          <FeedBackForm
+            createFeedBack={createFeedBack}
+            onePost={specificPost}
+          ></FeedBackForm>
+        ))} */}
+
         <FeedBackForm createFeedBack={createFeedBack}></FeedBackForm>
       </React.Fragment>
     );
