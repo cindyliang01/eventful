@@ -18,14 +18,16 @@ class FeedBackForm extends Component {
   };
 
   render() {
-    const { createFeedBack } = this.props;
+    const { createFeedBack, onePost } = this.props;
     return (
       <div>
         <form
           onSubmit={(event) => {
             if (this.state.feedback !== "") {
               event.preventDefault();
-              createFeedBack(this.state.feedback);
+              createFeedBack(this.state.feedback, onePost);
+              // createFeedBack(this.state.feedback);
+
               this.setState({ feedback: "" });
             } else {
               alert("You can't have an empty feedback");

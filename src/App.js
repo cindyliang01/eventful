@@ -21,6 +21,7 @@ class App extends Component {
         comments: [],
         post: "Sunday W",
         email: "sdfsdf@gmail.com",
+        feedback: "1",
       },
       {
         id: 2,
@@ -31,6 +32,7 @@ class App extends Component {
         ],
         post: "Jackie Jin",
         email: "fisf@gmail.com",
+        feedback: "2",
       },
       {
         id: 3,
@@ -41,6 +43,7 @@ class App extends Component {
         ],
         post: "Cindy Liang",
         email: "cindy@gmail.com",
+        feedback: "3",
       },
     ],
 
@@ -51,12 +54,6 @@ class App extends Component {
         comments: [{ id: 1, text: "", commentLikes: 0 }],
         post: " ",
       },
-    ],
-
-    feedBackTemplate: [
-      { id: 0, feedback: "12" },
-      { id: 1, feedback: "ff" },
-      { id: 2, feedback: "lmao" },
     ],
 
     flashCardIndex: 1,
@@ -79,16 +76,16 @@ class App extends Component {
     this.setState({ dummyListPosts: copyOfPosts });
   };
 
-  createFeedBack = (newFeedback) => {
-    const copyOfPosts = [...this.state.feedBackTemplate];
-    const length = copyOfPosts.length;
-    copyOfPosts[length] = { ...copyOfPosts[0] };
-    copyOfPosts[length].feedback = newFeedback;
-    copyOfPosts[length].id = length + 1;
+  createFeedBack = (newFeedback, specificPost) => {
+    const copyOfPosts = [...this.state.dummyListPosts];
+    const index = copyOfPosts.indexOf(specificPost);
+    copyOfPosts[index] = { ...specificPost };
+    copyOfPosts[index].feedback = newFeedback;
+    console.log("id" + index);
 
-    console.log(this.state.feedBackTemplate);
+    console.log(this.state.dummyListPosts);
 
-    this.setState({ feedBackTemplate: copyOfPosts });
+    this.setState({ dummyListPosts: copyOfPosts });
   };
 
   addLike = (specificPost) => {

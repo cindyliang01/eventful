@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CommentForm from "./commentForm";
 import EachComment from "./eachComment";
+import FeedBackForm from "./feedBackForm";
 
 class Post extends Component {
   render() {
@@ -10,6 +11,7 @@ class Post extends Component {
       addLikeForComment,
       deleteForComment,
       pageState,
+      createFeedBack,
     } = this.props;
     return (
       <div>
@@ -40,6 +42,10 @@ class Post extends Component {
             <div>
               {" "}
               <CommentForm createComment={createComment} onePost={onePost} />
+              <FeedBackForm
+                createFeedBack={createFeedBack}
+                onePost={onePost}
+              ></FeedBackForm>
             </div>
           )}
 
