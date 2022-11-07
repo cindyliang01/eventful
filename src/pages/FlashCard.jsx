@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Post from ".././components/post";
-import FeedBackForm from "../components/feedBackForm";
-import FeedBacks from "../components/feedbacks";
 
 class FlashCard extends Component {
   render() {
@@ -29,19 +27,28 @@ class FlashCard extends Component {
         <ul>
           {filteredPost.length > 0 ? (
             <React.Fragment>
-              <div className="w-auto min-w-[35%] max-w-min mt-8 mx-auto space-y-6 flex flex-col items-stretch border-4 rounded-2xl border-blue-300 max-h-96 overflow-auto">
-                <div className="flex flex-col">
-                  <Post
-                    onePost={filteredPost[flashCardIndex]}
-                    comments={filteredPost[flashCardIndex].comments}
-                    addLikeForComment={addLikeForComment}
-                    deleteForComment={deleteForComment}
-                    pageState={pageState}
-                    createFeedBack={createFeedBack}
-                  ></Post>
+              <div className="flex flex-row">
+                <div className="w-auto min-w-[35%] max-w-min mt-8 mx-auto space-y-6 flex flex-col items-stretch border-4 rounded-2xl border-blue-300 max-h-96 overflow-auto">
+                  <div className="flex flex-col">
+                    <Post
+                      onePost={filteredPost[flashCardIndex]}
+                      comments={filteredPost[flashCardIndex].comments}
+                      addLikeForComment={addLikeForComment}
+                      deleteForComment={deleteForComment}
+                      pageState={pageState}
+                      createFeedBack={createFeedBack}
+                    ></Post>
+                  </div>
+                </div>
+                <div className="w-auto min-w-[35%] max-w-min mt-8 mx-auto space-y-6 flex flex-col items-stretch border-4 rounded-2xl border-blue-300 max-h-96 overflow-auto">
+                  <h1 className="text-center font-bold text-2xl mt-4 text-blue-300">
+                    Internalize
+                  </h1>
+                  <div className="text-center font-bold text-lg pt-4">
+                    {filteredPost[flashCardIndex].feedback}
+                  </div>
                 </div>
               </div>
-              <div>feedback: {filteredPost[flashCardIndex].feedback}</div>
             </React.Fragment>
           ) : (
             "No comments to review"

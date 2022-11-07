@@ -39,7 +39,7 @@ class FeedBackForm extends Component {
             <textarea
               value={this.state.feedback}
               onChange={this.handleFeedbackChange}
-              placeholder="Feedback"
+              placeholder="Note down what you learned"
               className="border-2 rounded border-gray-300 p-1"
             ></textarea>
 
@@ -49,7 +49,7 @@ class FeedBackForm extends Component {
                 className=" hover:bg-transparent bg-blue-300 hover:text-blue-500 text-gray-100 font-semibold mt-3  py-2 px-4 border rounded"
                 type="submit"
               >
-                Comment
+                Internalize
               </button>
               <div className="flex flex-grow"></div>
             </div>

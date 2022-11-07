@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 
 import { Route, Routes } from "react-router-dom";
 
+// onclick create post, then update the filteredpost list
+
 class App extends Component {
   state = {
     dummyListPosts: [
@@ -58,6 +60,7 @@ class App extends Component {
 
     flashCardIndex: 1,
     pageState: "home",
+    filteredPost: [],
   };
 
   createPost = (newPost, newEmail) => {
@@ -74,6 +77,7 @@ class App extends Component {
     copyOfPosts[length].id = length + 1;
 
     this.setState({ dummyListPosts: copyOfPosts });
+    // console.log(this.state.filteredPost);
   };
 
   createFeedBack = (newFeedback, specificPost) => {
