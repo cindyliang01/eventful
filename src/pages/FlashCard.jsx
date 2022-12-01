@@ -14,7 +14,9 @@ class FlashCard extends Component {
       createFeedBack,
     } = this.props;
 
-    const filteredPost = listOfPosts.filter((post) => post.comments.length > 0);
+    const filteredPost = listOfPosts.filter(
+      (post) => post.comments.length > 0 && post.comments[0].text !== ""
+    );
     // const filteredPost = listOfPosts;
     return (
       <React.Fragment>

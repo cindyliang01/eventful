@@ -3,7 +3,7 @@ import PostForm from "../components/postForm";
 
 class Home extends Component {
   render() {
-    const { createPost, pageState } = this.props;
+    const { createPost, pageState, createComment } = this.props;
     return (
       <div className="flex flex-row justify-between">
         <div className=" mt-4 container flex flex-col">
@@ -53,7 +53,11 @@ class Home extends Component {
             Fill out the form!
           </h1>
           <div className="content justify-center">
-            <PostForm createPost={createPost} pageState={pageState}></PostForm>
+            <PostForm
+              createPost={createPost}
+              pageState={pageState}
+              createComment={createComment}
+            ></PostForm>
           </div>
         </div>
       </div>

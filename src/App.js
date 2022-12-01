@@ -204,6 +204,7 @@ class App extends Component {
                 <Home
                   createPost={this.createPost}
                   pageState={this.state.pageState}
+                  createComment={this.createComment}
                 />
               }
             ></Route>
