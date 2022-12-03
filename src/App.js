@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Form from "./pages/Form";
 import AllForms from "./pages/AllForms";
 import FlashCard from "./pages/FlashCard";
 import Home from "./pages/Home";
@@ -9,6 +8,8 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 
 // onclick create post, then update the filteredpost list
+// ADD COMMENTS TO WHEN WE CREATE THE POST INSTEAD OF COMMENTING IN THE ALL FORMS --> no because then they would only be able to comment one thing
+//OR ADD A SEARCH BAR AND THE PAGE ONLY SHOWS THAT ONE, create a new page where there's a search button and then the user can comment on their post
 
 class App extends Component {
   state = {
@@ -54,7 +55,9 @@ class App extends Component {
         id: 0,
         like: 0,
         comments: [{ id: 1, text: "", commentLikes: 0 }],
-        post: " ",
+        post: "",
+        email: "",
+        feedback: "",
       },
     ],
 
@@ -78,6 +81,35 @@ class App extends Component {
 
     this.setState({ dummyListPosts: copyOfPosts });
     // console.log(this.state.filteredPost);
+  };
+
+  createComment = (newComment, specificPost) => {
+    // cloning specific post instead of altering the actual state
+    const copyOfPosts = [...this.state.dummyListPosts];
+    const index = copyOfPosts.indexOf(specificPost);
+    copyOfPosts[index] = { ...specificPost };
+
+    let dummyVariable = 0;
+
+    if (
+      copyOfPosts[index].comments.length !== 0 &&
+      copyOfPosts[index].comments[0].text === ""
+    ) {
+      dummyVariable = 0;
+    } else {
+      dummyVariable = copyOfPosts[index].comments.length;
+    }
+
+    const length = dummyVariable;
+
+    copyOfPosts[index].comments[length] = {
+      ...this.state.dummyListTemplate[0].comments[0],
+    };
+    // setting up new comment in specific post
+    copyOfPosts[index].comments[length].text = newComment;
+    copyOfPosts[index].comments[length].id = length + 1;
+    this.setState({ dummyListPosts: copyOfPosts });
+    console.log(copyOfPosts);
   };
 
   createFeedBack = (newFeedback, specificPost) => {
@@ -109,34 +141,34 @@ class App extends Component {
     }
   };
 
-  createComment = (newComment, specificPost) => {
-    // cloning specific post instead of altering the actual state
-    const copyOfPosts = [...this.state.dummyListPosts];
-    const index = copyOfPosts.indexOf(specificPost);
-    copyOfPosts[index] = { ...specificPost };
+  // createComment = (newComment, specificPost) => {
+  //   // cloning specific post instead of altering the actual state
+  //   const copyOfPosts = [...this.state.dummyListPosts];
+  //   const index = copyOfPosts.indexOf(specificPost);
+  //   copyOfPosts[index] = { ...specificPost };
 
-    let dummyVariable = 0;
+  //   let dummyVariable = 0;
 
-    if (
-      copyOfPosts[index].comments.length !== 0 &&
-      copyOfPosts[index].comments[0].text === ""
-    ) {
-      dummyVariable = 0;
-    } else {
-      dummyVariable = copyOfPosts[index].comments.length;
-    }
+  //   if (
+  //     copyOfPosts[index].comments.length !== 0 &&
+  //     copyOfPosts[index].comments[0].text === ""
+  //   ) {
+  //     dummyVariable = 0;
+  //   } else {
+  //     dummyVariable = copyOfPosts[index].comments.length;
+  //   }
 
-    const length = dummyVariable;
+  //   const length = dummyVariable;
 
-    copyOfPosts[index].comments[length] = {
-      ...this.state.dummyListTemplate[0].comments[0],
-    };
-    // setting up new comment in specific post
-    copyOfPosts[index].comments[length].text = newComment;
-    copyOfPosts[index].comments[length].id = length + 1;
-    this.setState({ dummyListPosts: copyOfPosts });
-    console.log(copyOfPosts);
-  };
+  //   copyOfPosts[index].comments[length] = {
+  //     ...this.state.dummyListTemplate[0].comments[0],
+  //   };
+  //   // setting up new comment in specific post
+  //   copyOfPosts[index].comments[length].text = newComment;
+  //   copyOfPosts[index].comments[length].id = length + 1;
+  //   this.setState({ dummyListPosts: copyOfPosts });
+  //   console.log(copyOfPosts);
+  // };
 
   addLikeForComment = (commentId, specificPost) => {
     const copyOfPosts = [...this.state.dummyListPosts];

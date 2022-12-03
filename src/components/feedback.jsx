@@ -1,19 +1,43 @@
 import React, { Component } from "react";
 
-//what to do next, hook individual feedbacl with corresponding flashcard
-
 class FeedBack extends Component {
   render() {
-    // const { oneFeedBack } = this.props;
+    const { onePost } = this.props;
     return (
+      // <React.Fragment>
+      //   <div>{this.displayFeedback()}</div>
+      // </React.Fragment>
+
+      // {onePost.feedback.length > 0  ? (
+      //   <div className="text-gray-400">
+      //     {" "}
+      //     {
+      //       <React.Fragment>
+      //       <div>{this.displayFeedback()}</div>
+      //     </React.Fragment>
+
+      //     }
+      //   </div>
+      // ) : (
+      //   <span className="text-gray-400 p-2 text-center">No comments</span>
+      // )}
+
       <React.Fragment>
-        <div>{this.displayFeedback()}</div>
+        {onePost.feedback !== "" ? (
+          <div className="text-center font-bold text-lg pt-4">
+            {this.displayFeedback()}
+          </div>
+        ) : (
+          <div className="text-center font-bold text-lg pt-4">
+            N/A. Please fill out what idea you want to internalize!
+          </div>
+        )}
       </React.Fragment>
     );
   }
 
   displayFeedback() {
-    const { feedback } = this.props.oneFeedBack;
+    const { feedback } = this.props.onePost;
     return feedback;
   }
 }
