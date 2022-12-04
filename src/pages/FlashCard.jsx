@@ -47,10 +47,6 @@ class FlashCard extends Component {
                   <h1 className="text-center font-bold text-2xl mt-4 text-blue-300">
                     Internalize
                   </h1>
-                  {/* <div className="text-center font-bold text-lg pt-4">
-                    {filteredPost[flashCardIndex].feedback}
-                  </div> */}
-
                   <FeedBack onePost={filteredPost[flashCardIndex]}></FeedBack>
                 </div>
               </div>

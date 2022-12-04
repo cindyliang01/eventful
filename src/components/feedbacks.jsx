@@ -8,13 +8,8 @@ class FeedBacks extends Component {
       <div>
         {" "}
         {listOfFeedBacks.map((feedback12) => (
-          <FeedBack
-            oneFeedBack={feedback12}
-            key={feedback12.id}
-            // specific={feedback12.feedback}
-          />
+          <FeedBack oneFeedBack={feedback12} key={feedback12.id} />
         ))}
-        {/* <FeedBack></FeedBack> */}
       </div>
     );
   }

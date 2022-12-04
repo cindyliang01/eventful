@@ -11,6 +11,10 @@ import { Route, Routes } from "react-router-dom";
 // ADD COMMENTS TO WHEN WE CREATE THE POST INSTEAD OF COMMENTING IN THE ALL FORMS --> no because then they would only be able to comment one thing
 //OR ADD A SEARCH BAR AND THE PAGE ONLY SHOWS THAT ONE, create a new page where there's a search button and then the user can comment on their post
 
+//what to do next is to clean up the home page and make everything much more clear to see
+// maybe when they click resolve, there can be a strikethrough through the words?
+//note down how to improve code writing, think big picture
+
 class App extends Component {
   state = {
     dummyListPosts: [

@@ -4,24 +4,6 @@ class FeedBack extends Component {
   render() {
     const { onePost } = this.props;
     return (
-      // <React.Fragment>
-      //   <div>{this.displayFeedback()}</div>
-      // </React.Fragment>
-
-      // {onePost.feedback.length > 0  ? (
-      //   <div className="text-gray-400">
-      //     {" "}
-      //     {
-      //       <React.Fragment>
-      //       <div>{this.displayFeedback()}</div>
-      //     </React.Fragment>
-
-      //     }
-      //   </div>
-      // ) : (
-      //   <span className="text-gray-400 p-2 text-center">No comments</span>
-      // )}
-
       <React.Fragment>
         {onePost.feedback !== "" ? (
           <div className="text-center font-bold text-lg pt-4">
