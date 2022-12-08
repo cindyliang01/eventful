@@ -22,7 +22,7 @@ class App extends Component {
         id: 1,
         like: 0,
         // comments: [
-        //   { id: 1, text: "commentOneFromPostOne", commentLikes: 1 },
+        //   { id: 1, text: "commentOneFrom PostOne", commentLikes: 1 },
         //   { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
         // ],
         comments: [],
