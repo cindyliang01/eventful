@@ -15,13 +15,6 @@ class NavBar extends Component {
           </CustomLink>
           <div className="flex flex-grow"></div>
           <div className="flex space-x-6">
-            {/* <CustomLink
-              to="/Form"
-              className="hover:text-pink-400 text-gray-500 font-semibold"
-              onClick={() => setPageState("form")}
-            >
-              Form
-            </CustomLink> */}
             <CustomLink
               to="/AllForms"
               className="hover:text-pink-400 text-gray-500 font-semibold"

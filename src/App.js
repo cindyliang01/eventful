@@ -4,16 +4,7 @@ import NavBar from "./components/NavBar";
 import AllForms from "./pages/AllForms";
 import FlashCard from "./pages/FlashCard";
 import Home from "./pages/Home";
-
 import { Route, Routes } from "react-router-dom";
-
-// onclick create post, then update the filteredpost list
-// ADD COMMENTS TO WHEN WE CREATE THE POST INSTEAD OF COMMENTING IN THE ALL FORMS --> no because then they would only be able to comment one thing
-//OR ADD A SEARCH BAR AND THE PAGE ONLY SHOWS THAT ONE, create a new page where there's a search button and then the user can comment on their post
-
-//what to do next is to clean up the home page and make everything much more clear to see
-// maybe when they click resolve, there can be a strikethrough through the words?
-//note down how to improve code writing, think big picture
 
 class App extends Component {
   state = {
@@ -21,14 +12,10 @@ class App extends Component {
       {
         id: 1,
         like: 0,
-        // comments: [
-        //   { id: 1, text: "commentOneFrom PostOne", commentLikes: 1 },
-        //   { id: 2, text: "commentTwoFromPostOne", commentLikes: 0 },
-        // ],
         comments: [],
-        post: "Sunday W",
+        post: "John W",
         email: "sdfsdf@gmail.com",
-        feedback: "1",
+        feedback: "Feedback 1",
       },
       {
         id: 2,
@@ -37,9 +24,9 @@ class App extends Component {
           { id: 1, text: "commentOneFromPostTwo", commentLikes: 0 },
           { id: 2, text: "commentTwoFromPostTwo", commentLikes: 0 },
         ],
-        post: "Jackie Jin",
+        post: "Jackie B",
         email: "fisf@gmail.com",
-        feedback: "2",
+        feedback: "No strong scents",
       },
       {
         id: 3,
@@ -50,7 +37,7 @@ class App extends Component {
         ],
         post: "Cindy Liang",
         email: "cindy@gmail.com",
-        feedback: "3",
+        feedback: "Focus on the mood",
       },
     ],
 
@@ -84,7 +71,6 @@ class App extends Component {
     copyOfPosts[length].id = length + 1;
 
     this.setState({ dummyListPosts: copyOfPosts });
-    // console.log(this.state.filteredPost);
   };
 
   createComment = (newComment, specificPost) => {
@@ -144,35 +130,6 @@ class App extends Component {
       this.setState({ dummyListPosts: copyOfPosts });
     }
   };
-
-  // createComment = (newComment, specificPost) => {
-  //   // cloning specific post instead of altering the actual state
-  //   const copyOfPosts = [...this.state.dummyListPosts];
-  //   const index = copyOfPosts.indexOf(specificPost);
-  //   copyOfPosts[index] = { ...specificPost };
-
-  //   let dummyVariable = 0;
-
-  //   if (
-  //     copyOfPosts[index].comments.length !== 0 &&
-  //     copyOfPosts[index].comments[0].text === ""
-  //   ) {
-  //     dummyVariable = 0;
-  //   } else {
-  //     dummyVariable = copyOfPosts[index].comments.length;
-  //   }
-
-  //   const length = dummyVariable;
-
-  //   copyOfPosts[index].comments[length] = {
-  //     ...this.state.dummyListTemplate[0].comments[0],
-  //   };
-  //   // setting up new comment in specific post
-  //   copyOfPosts[index].comments[length].text = newComment;
-  //   copyOfPosts[index].comments[length].id = length + 1;
-  //   this.setState({ dummyListPosts: copyOfPosts });
-  //   console.log(copyOfPosts);
-  // };
 
   addLikeForComment = (commentId, specificPost) => {
     const copyOfPosts = [...this.state.dummyListPosts];
@@ -244,20 +201,6 @@ class App extends Component {
                 />
               }
             ></Route>
-            {/* <Route
-              path="/Form"
-              element={
-                <Form
-                  listOfPosts={this.state.dummyListPosts}
-                  addLike={this.addLike}
-                  createPost={this.createPost}
-                  createComment={this.createComment}
-                  addLikeForComment={this.addLikeForComment}
-                  deleteForComment={this.deleteForComment}
-                  pageState={this.state.pageState}
-                />
-              }
-            /> */}
             <Route
               path="/AllForms"
               element={

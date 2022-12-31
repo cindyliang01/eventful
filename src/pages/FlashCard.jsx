@@ -18,7 +18,6 @@ class FlashCard extends Component {
     const filteredPost = listOfPosts.filter(
       (post) => post.comments.length > 0 && post.comments[0].text !== ""
     );
-    // const filteredPost = listOfPosts;
     return (
       <React.Fragment>
         <h1 className="text-center font-bold text-2xl mt-4 text-blue-300">
@@ -43,11 +42,13 @@ class FlashCard extends Component {
                     ></Post>
                   </div>
                 </div>
-                <div className="w-auto min-w-[35%] max-w-min mt-8 mx-auto space-y-6 flex flex-col items-stretch border-4 rounded-2xl border-blue-300 max-h-96 overflow-auto">
-                  <h1 className="text-center font-bold text-2xl mt-4 text-blue-300">
+                <div className="w-auto min-w-[35%] max-w-min mt-8 mx-auto space-y-6 flex flex-col items-stretch border-4 rounded-2xl border-white max-h-96 overflow-auto">
+                  <div className="border-b border-gray-300 m-6 pb-4"></div>
+                  <h1 className="text-center font-bold text-2xl text-blue-300">
                     Internalize
                   </h1>
                   <FeedBack onePost={filteredPost[flashCardIndex]}></FeedBack>
+                  <div className="border-t border-gray-300 mt-6 pt-4"></div>
                 </div>
               </div>
             </React.Fragment>

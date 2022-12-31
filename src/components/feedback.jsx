@@ -6,7 +6,7 @@ class FeedBack extends Component {
     return (
       <React.Fragment>
         {onePost.feedback !== "" ? (
-          <div className="text-center font-bold text-lg pt-4">
+          <div className="text-center font-bold text-lg pt-4 text-gray-500">
             {this.displayFeedback()}
           </div>
         ) : (
