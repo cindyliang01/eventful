@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import AllForms from "./pages/allForms";
+import AllTheForms from "./pages/allTheForms";
 import FlashCard from "./pages/FlashCard";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
@@ -198,7 +198,16 @@ class App extends Component {
             <Route
               path="/AllForms"
               element={
-                <allForms
+                // <allForms
+                //   listOfPosts={this.state.dummyListPosts}
+                //   addLike={this.addLike}
+                //   createPost={this.createPost}
+                //   createComment={this.createComment}
+                //   addLikeForComment={this.addLikeForComment}
+                //   deleteForComment={this.deleteForComment}
+                //   pageState={this.state.pageState}
+                // />
+                <AllTheForms
                   listOfPosts={this.state.dummyListPosts}
                   addLike={this.addLike}
                   createPost={this.createPost}

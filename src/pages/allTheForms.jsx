@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Posts from "../components/posts";
 
-class allForms extends Component {
+class AllTheForms extends Component {
   render() {
     const {
       listOfPosts,
@@ -33,4 +33,4 @@ class allForms extends Component {
   }
 }
 
-export default allForms;
+export default AllTheForms;
