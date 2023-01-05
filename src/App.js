@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import AllForms from "./pages/AllForms";
+import AllForms from "./pages/allForms";
 import FlashCard from "./pages/FlashCard";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
@@ -54,7 +54,6 @@ class App extends Component {
 
     flashCardIndex: 1,
     pageState: "home",
-    filteredPost: [],
   };
 
   createPost = (newPost, newEmail) => {
@@ -99,7 +98,6 @@ class App extends Component {
     copyOfPosts[index].comments[length].text = newComment;
     copyOfPosts[index].comments[length].id = length + 1;
     this.setState({ dummyListPosts: copyOfPosts });
-    console.log(copyOfPosts);
   };
 
   createFeedBack = (newFeedback, specificPost) => {
@@ -107,10 +105,6 @@ class App extends Component {
     const index = copyOfPosts.indexOf(specificPost);
     copyOfPosts[index] = { ...specificPost };
     copyOfPosts[index].feedback = newFeedback;
-    console.log("id" + index);
-
-    console.log(this.state.dummyListPosts);
-
     this.setState({ dummyListPosts: copyOfPosts });
   };
 
@@ -163,7 +157,7 @@ class App extends Component {
 
   setPageState = (state) => {
     this.setState({ pageState: state }, () => {
-      console.log("hiiehie" + this.state.pageState);
+      console.log(this.state.pageState);
     });
   };
 
@@ -171,7 +165,7 @@ class App extends Component {
     if (flashCardIndex > 0) {
       flashCardIndex--;
       this.setState({ flashCardIndex }, () => {
-        console.log("flash index" + this.state.flashCardIndex);
+        console.log(this.state.flashCardIndex);
       });
     }
   };
@@ -180,7 +174,7 @@ class App extends Component {
     if (flashCardIndex < length - 1) {
       flashCardIndex++;
       this.setState({ flashCardIndex }, () => {
-        console.log("flash index add" + this.state.flashCardIndex);
+        console.log(this.state.flashCardIndex);
       });
     }
   };
@@ -204,7 +198,7 @@ class App extends Component {
             <Route
               path="/AllForms"
               element={
-                <AllForms
+                <allForms
                   listOfPosts={this.state.dummyListPosts}
                   addLike={this.addLike}
                   createPost={this.createPost}
@@ -227,7 +221,6 @@ class App extends Component {
                   goNext={this.goNext}
                   pageState={this.state.pageState}
                   createFeedBack={this.createFeedBack}
-                  listOfFeedBacks={this.state.feedBackTemplate}
                 />
               }
             />

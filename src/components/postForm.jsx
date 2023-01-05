@@ -28,7 +28,7 @@ class PostForm extends Component {
       <div>
         <form
           onSubmit={(event) => {
-            if (this.state.post !== "" && this.state.email) {
+            if (this.state.post !== "" && this.state.email !== "") {
               event.preventDefault();
               createPost(this.state.post, this.state.email);
               this.setState({ post: "", email: "" });

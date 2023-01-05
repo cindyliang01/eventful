@@ -77,16 +77,6 @@ class Post extends Component {
     const { email } = this.props.onePost;
     return email;
   }
-
-  likeCounts() {
-    const { like } = this.props.onePost;
-    return like;
-  }
-
-  likeUnlike() {
-    const { like } = this.props.onePost;
-    return like === 0 ? "Like" : "Unlike";
-  }
 }
 
 export default Post;
