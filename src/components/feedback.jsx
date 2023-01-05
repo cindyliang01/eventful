@@ -10,7 +10,7 @@ class FeedBack extends Component {
             {this.displayFeedback()}
           </div>
         ) : (
-          <div className="text-center font-bold text-lg pt-4">
+          <div className="text-center font-bold text-lg pt-4 text-gray-500">
             N/A. Please fill out what idea you want to internalize!
           </div>
         )}
@@ -25,3 +25,5 @@ class FeedBack extends Component {
 }
 
 export default FeedBack;
+
+//done

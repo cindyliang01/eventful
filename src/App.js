@@ -26,7 +26,7 @@ class App extends Component {
         ],
         post: "Jackie B",
         email: "fisf@gmail.com",
-        feedback: "No strong scents",
+        feedback: "Focus more on lightening up the mood",
       },
       {
         id: 3,
@@ -37,7 +37,7 @@ class App extends Component {
         ],
         post: "Cindy Liang",
         email: "cindy@gmail.com",
-        feedback: "Focus on the mood",
+        feedback: "",
       },
     ],
 
@@ -52,7 +52,7 @@ class App extends Component {
       },
     ],
 
-    flashCardIndex: 1,
+    flashCardIndex: 0,
     pageState: "home",
   };
 
@@ -198,15 +198,6 @@ class App extends Component {
             <Route
               path="/AllForms"
               element={
-                // <allForms
-                //   listOfPosts={this.state.dummyListPosts}
-                //   addLike={this.addLike}
-                //   createPost={this.createPost}
-                //   createComment={this.createComment}
-                //   addLikeForComment={this.addLikeForComment}
-                //   deleteForComment={this.deleteForComment}
-                //   pageState={this.state.pageState}
-                // />
                 <AllTheForms
                   listOfPosts={this.state.dummyListPosts}
                   addLike={this.addLike}
@@ -241,3 +232,5 @@ class App extends Component {
 }
 
 export default App;
+
+//done
